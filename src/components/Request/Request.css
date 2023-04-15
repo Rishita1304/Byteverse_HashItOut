@@ -98,6 +98,9 @@
     left:0;
     padding:1rem 0;
     border-radius: 0px 0px 50px 50px;
-    background-color: black;
-    color: white;
+    background-color: #1624419f;
+    color: rgb(239, 234, 234) !important;
+}
+.submit:hover{
+    background-color: #102143c5;
 }
