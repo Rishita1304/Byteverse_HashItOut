@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+.request{
+    background: linear-gradient(rgba(79, 149, 206, 0.203), rgba(59, 118, 207, 0.249)),
+    url('../../images/slider-2.jpg');
+    background-size: cover;
+    width:100%;
+    height:500px;
+    font-family: 'Roboto', sans-serif;
+    /* display: flex; */
+}
+.requestTextArea{
+    width:50%;
+    /* height: auto; */
+    display: flex;
+    color: rgb(223, 236, 247);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 150px 30px 30px 10px;
+    margin-left: 8rem;
+}
+.btn {
+    padding: 7px 15px;
+    background: white;
+    color: #195377;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+.btn:hover {
+    color: #fff;
+    background: rgb(49, 112, 144);
+  }
+.requestTextArea h3{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.requestTextArea p{
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+}
+.requestSec{
+    background-color: #b3cce1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.requestCar{
+    background-color: #dfe9f1a7;
+    width:20rem;
+    /* border: 1px solid black; */
+    right: 1rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:5rem 1rem;
+    border-radius: 50px;
+    position: absolute;
+    margin-right: 2rem;
+    margin-top: 4rem;
+}
+.requestCar h2{
+    position: absolute;
+    top:1.5rem;
+}
+
+.registerfield{
+    border-bottom: 1px solid black;
+    width:18rem;
+    display: flex;
+    align-items: center;
+}
+.registerfield input{
+    width:15rem;
+    margin:1rem auto;
+    background-color: #b3cce105;
+    outline:none;
+    border:none;
+
+}
+.pickup img{
+    width:20px;
+    height:20px;
+    margin: 0 10px;
+}
+.destination img{
+    width: 15px;
+    height: 15px;
+    margin:0 13px
+}
+.submit{
+    width:100%;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    padding:1rem 0;
+    border-radius: 0px 0px 50px 50px;
+    background-color: #1624419f;
+    color: rgb(239, 234, 234) !important;
+}
+.submit:hover{
+    background-color: #102143c5;
+}

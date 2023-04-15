@@ -1,14 +1,14 @@
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar'
-import Request from '../../components/Request/Request'
+import Ride from '../../components/RIde/Ride'
 
-const Home = () => {
+const OfferRide = () => {
   return (
     <>
       <Navbar/>
-      <Request/>
+      <Ride/>
     </>
   )
 }
 
-export default Home
+export default OfferRide

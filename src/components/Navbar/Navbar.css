@@ -59,6 +59,8 @@
     text-decoration: none;
     margin:0 1rem;
     color: black;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 .link:hover{
     color: #4990b6;
