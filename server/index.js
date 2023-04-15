@@ -23,7 +23,7 @@ app.use(express.static("uploads"));
 app.use(express.urlencoded({ extended: false }));
 app.set("trust proxy", 1);
 app.use(cors());
-app.use("/api", router);
+app.use("/api/auth", router);
 app.listen(3000, () => {
   console.log(`Server running at ${port}`);
 });
