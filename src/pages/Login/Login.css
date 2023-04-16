@@ -27,7 +27,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width:20rem;
+    width:30rem;
     height: auto;
     padding: 1rem 1rem;
     
@@ -37,14 +37,19 @@
     padding: 0.7rem 0.5rem;
     border:0.5px solid grey;
     outline:none;
-    margin:0.1rem 0.8rem;
+    margin:1rem 0.8rem;
     border-radius: 5px;
 }
 .logInsubmit{
-    color:white;
-    background-color: #4054B2;
-    border:none;
+    width:80%;
+    padding: 0.8rem;
+    border:0.8px solid grey;
     outline:none;
+    margin: 0.5rem 0.5rem;
+    border-radius: 8px;
+    background-color: #3c6981;
+    color:white;
+    font-size: 15px;
 }
 .loginerror{
     color:red;

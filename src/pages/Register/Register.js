@@ -154,7 +154,7 @@ const Register = () => {
                 </div>
             </div>
             <p className='registererror'>{formerror.gender}</p>
-            <input type="submit" value="Register" className="inputfieldss registerbtn"/>
+            <button type="submit" className="inputfieldss registerbtn">Register</button>
         </form>
         <h4>Already Have An Account?<Link to='/login' className="loginback">LogIn</Link></h4>
       </div>
