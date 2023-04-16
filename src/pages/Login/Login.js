@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import "./Login.css";
-
+// import { email } from '../Register/Register';
+import axios from "axios";
 export let profile_data={
     id:"",
     name:"",
@@ -12,7 +13,7 @@ export let profile_data={
 
 const Login = () => {
     const initialvalues={
-        mobile_number:"",
+        email:"",
         password:""
     }
     const navigate=useNavigate();
@@ -24,17 +25,19 @@ const Login = () => {
         const {name,value}=e.target;
         setformvalues({...formvalues,[name]:value});
     }
+    const loginSubmitHandler=(e)=>{
+        e.preventDefault();
     const error=()=>{
         const errors={}
         setnoerror(true);
         const cmobile_num= /^[7-9]([0-9]){9}$/;
 
         if(cmobile_num.test(formvalues.mobile_number)){
-            errors.mobile_number="";
+            errors.email="";
         }
         else{
             setnoerror(false)
-            errors.mobile_number="**Invalid Mobile Number";
+            errors.email="**Invalid Mobile Number";
         }
 
         if(formvalues.password==""){
@@ -47,17 +50,23 @@ const Login = () => {
 
         return errors;
     }
-
-
-
+    const dataCheck={
+        email:formvalues.email,
+        password:formvalues.password
+    }
+   console.log(dataCheck);
+    axios.get("https://carpooling-1sqz.onrender.com/api/auth/login",dataCheck).then((e)=>{
+        console.log(e.data);
+    }).catch((err)=>{console.log(err.message)});}
 
     return(
         <>
     <div className='login'>       
         <div class="loginControls">
-            <form className="loginPage">
-                <input type="email" name="email" value={formvalues.mobile_number} placeholder="Email" onChange={userHandler}/>
-                <p className='loginerror'>{formerror.mobile_number}</p>
+            <form className="loginPage" onSubmit={loginSubmitHandler}>
+
+                <input type="email" name="email" value={formvalues.email} placeholder="Email" onChange={userHandler}/>
+                <p className='loginerror'>{formerror.email}</p>
                 <input type="password" name="password" value={formvalues.password} placeholder="Password" onChange={userHandler}/>
                 <p className='loginerror'>{formerror.password}</p>
                 <input type="submit" value="LogIn" className='logInsubmit'/>
