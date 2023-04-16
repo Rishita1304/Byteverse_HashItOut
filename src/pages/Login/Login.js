@@ -40,7 +40,7 @@ const Login = () => {
             errors.email="**Invalid Mobile Number";
         }
 
-        if(formvalues.password==""){
+        if(formvalues.password===""){
             errors.password="**This field is required"
             setnoerror(false)
         }
@@ -55,8 +55,9 @@ const Login = () => {
         password:formvalues.password
     }
    console.log(dataCheck);
-    axios.get("https://carpooling-1sqz.onrender.com/api/auth/login",dataCheck).then((e)=>{
+    axios.post("https://carpooling-1sqz.onrender.com/api/auth/login",dataCheck).then((e)=>{
         console.log(e.data);
+        localStorage.setItem("FullName", dataCheck.full_name);
     }).catch((err)=>{console.log(err)});}
 
     return(
@@ -69,7 +70,7 @@ const Login = () => {
                 <p className='loginerror'>{formerror.email}</p>
                 <input type="password" name="password" value={formvalues.password} placeholder="Password" onChange={userHandler}/>
                 <p className='loginerror'>{formerror.password}</p>
-                <input type="submit" value="LogIn" className='logInsubmit'/>
+                <button type="submit" className='logInsubmit'>Login</button>
             </form>
             <NavLink to="/forgetPassword" className="forgetPassword">Forgotten Password?</NavLink>
             <h4>Not Have An Account? <Link className="register">Register</Link></h4>

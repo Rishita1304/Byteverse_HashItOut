@@ -119,7 +119,7 @@ const Request = () => {
 
 
    <div>
-     <Link to="/" type="submit" className="submit">Search</Link>
+     <Link to="/rides" type="submit" className="submit">Search</Link>
    </div>
    </div>
 
