@@ -22,6 +22,7 @@ const Rides = () => {
               "Content-Type": "application/json",
             },
             credentials: "include",
+            mode:"no-cors"
           }
         );
         console.log(response);
