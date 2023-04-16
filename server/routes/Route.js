@@ -7,6 +7,7 @@ const login = require("../controllers/login");
 const router=express.Router();
 router.post("/request",request);
 router.post("/register",User);
+// router.post("/allRides",User);
 router.post("/offerRide",offer);
 router.get("/profile",profile);
 router.get("/login",login);

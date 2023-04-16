@@ -6,6 +6,7 @@ import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import Contact from './pages/Contact/Contact'
 import OfferRide from './pages/OfferRide/OfferRide';
+import Rides from './pages/Rides/Rides';
 function App() {
   return (
     <Router>
@@ -16,6 +17,7 @@ function App() {
          <Route path="/login" element={<Login/>}/>
          <Route path="/contact" element={<Contact/>}/>
          <Route path="/offeraride" element={<OfferRide/>}/>
+         <Route path="/rides" element={<Rides/>}/>
         </Routes>
     </div>
     </Router>

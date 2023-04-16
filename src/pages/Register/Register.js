@@ -117,7 +117,8 @@ const Register = () => {
         console.log(e.data);
         email=e.data.email
         console.log(email);
-    }).catch((err)=>{console.log(err.message)});}
+        localStorage.setItem("email", dataCheck.email);
+    }).catch((err)=>{console.log(err)});}
   return (
     <>
     <div className="hide">
@@ -149,7 +150,7 @@ const Register = () => {
                 </div>
                 <div className="genderCategory">
                     <input type="radio" name="gender" value="Custom" onChange={userHandler}/>
-                    <label>Custom</label><br/>
+                    <label>Others</label><br/>
                 </div>
             </div>
             <p className='registererror'>{formerror.gender}</p>

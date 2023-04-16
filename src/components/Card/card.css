@@ -1,0 +1,16 @@
+.main{
+  border: 1px solid black;
+  width: 40vw;
+  height:60vh;
+}
+.card_logo{
+    background-size: cover;
+    width: 100%;
+}
+.card_content{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.card_button{
+    margin-top: 1rem;
+}

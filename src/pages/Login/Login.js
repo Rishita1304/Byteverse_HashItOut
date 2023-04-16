@@ -57,7 +57,7 @@ const Login = () => {
    console.log(dataCheck);
     axios.get("https://carpooling-1sqz.onrender.com/api/auth/login",dataCheck).then((e)=>{
         console.log(e.data);
-    }).catch((err)=>{console.log(err.message)});}
+    }).catch((err)=>{console.log(err)});}
 
     return(
         <>
