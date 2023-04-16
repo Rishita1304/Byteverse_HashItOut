@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./rides.css";
 import Card from "../../components/Card/Card";
 import axios from "axios";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 import Navbar from "../../components/Navbar/Navbar";
 const Rides = () => {
   const [cards, setCards] = useState([]);
@@ -37,7 +39,7 @@ const Rides = () => {
 
   return (
     <>
-      {" "}
+
       <Navbar />
       <div className="card_container">
         {cards.map((card) => (

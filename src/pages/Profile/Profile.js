@@ -4,16 +4,15 @@ import img1 from "../../images/user.png";
 import axios from "axios";
 
 export default function Profile() {
-  let email="" 
-  email = localStorage.getItem("email");
+  const email = localStorage.getItem("email");
   const datacheck = {
     email: email,
   };
-  // console.log(stringEmail);
+  console.log(datacheck.email);
   axios
     .get("https://carpooling-1sqz.onrender.com/api/auth/profile", datacheck)
     .then((e) => {
-      console.log(e.data);
+      console.log(e);
     })
     .catch((err) => {
       console.log(err);

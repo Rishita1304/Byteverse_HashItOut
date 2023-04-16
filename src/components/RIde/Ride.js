@@ -69,6 +69,7 @@ const Ride = () => {
     };
     const email=localStorage.getItem("email");
     const name=localStorage.getItem("name");
+    console.log(name);
     console.log(email);
     const datacheck={
       email:email,

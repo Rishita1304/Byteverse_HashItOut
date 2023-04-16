@@ -1,6 +1,7 @@
 .user {
     flex: 4;
     padding: 20px;
+    height: 100vh;
     background-image: url('../../images/10068.jpg');
   }
   
