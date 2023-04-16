@@ -2,7 +2,7 @@ import React from 'react'
 import "./card.css"
 import { CCard,CCardImage,CCardBody,CButton,CCardText,CCardTitle } from '@coreui/react'
 import logo from "../../images/logo.png";
-const Card = () => {
+const Card = ({data}) => {
   return (
     <CCard style={{ width: '18rem' }} className='main'>
   <CCardImage orientation="top" src={logo} className='card_logo'/>
