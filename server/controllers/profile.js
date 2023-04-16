@@ -13,6 +13,7 @@ const profile = async (req, res) => {
 const Allrides = async (req, res) => {
   const start = req.body.start;
   const destination = req.body.destination;
+  const a=0;
   const rides = await RideOffer.find({
     start: start,
     destination: destination,
