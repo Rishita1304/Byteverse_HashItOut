@@ -40,3 +40,6 @@ a:-webkit-any-link {
   text-decoration: none;
   color: inherit;
 }
+::-webkit-scrollbar {
+  display: none;
+}
