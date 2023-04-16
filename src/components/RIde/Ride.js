@@ -16,10 +16,14 @@ const Ride = () => {
   const [formerror, setformerror] = useState({});
 
   const userHandler = (e) => {
+    console.log("hola");
     const { name, value } = e.target;
+    console.log(e.target);
     setformvalues({ ...formvalues, [name]: value });
+    console.log({name,value});
   };
   const submitHandler = (e) => {
+    console.log(e);
     e.preventDefault();
     const errors_form = () => {
       const errors = {};
@@ -66,9 +70,11 @@ const Ride = () => {
       }
     };
     const email=localStorage.getItem("email");
+    const name=localStorage.getItem("name");
     console.log(email);
     const datacheck={
       email:email,
+      name:name,
       start:formvalues.pickup,
       destination:formvalues.destination,
       date:formvalues.date,
@@ -87,12 +93,13 @@ const Ride = () => {
       <div className="ride__container container grid">
         <div className="ride__content">
           <form className="ride__form" onSubmit={submitHandler}>
-            <div className="ride__form-div">
+          <div className="ride__form-div">
               <label className="ride__form-tag">Pickup</label>
               <input
                 type="text"
                 placeholder="Select Pickup"
                 name="pickup"
+                value={formvalues.pickup}
                 onChange={userHandler}
                 className="ride__form-input"
               />

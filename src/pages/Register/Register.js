@@ -112,12 +112,12 @@ const Register = () => {
         password:formvalues.password
         // password2: formValues.confirmPassword,
       };
-
     axios.post("https://carpooling-1sqz.onrender.com/api/auth/register",dataCheck).then((e)=>{
         console.log(e.data);
         email=e.data.email
         console.log(email);
         localStorage.setItem("email", dataCheck.email);
+        localStorage.setItem("name",dataCheck.full_name)
     }).catch((err)=>{console.log(err)});}
   return (
     <>
