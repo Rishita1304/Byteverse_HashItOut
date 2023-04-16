@@ -24,7 +24,7 @@ const Ride = () => {
     const errors_form = () => {
       const errors = {};
 
-      if (formvalues.pickup != "") {
+      if (formvalues.pickup !== "") {
         errors.pickup = "";
         seterror(true);
         console.log(error.pickup);
@@ -33,7 +33,7 @@ const Ride = () => {
         errors.pickup = "Please enter pickup";
       }
 
-      if (formvalues.destination != "") {
+      if (formvalues.destination !== "") {
         errors.destination = "";
         seterror(true);
         console.log(error.destination);
@@ -42,14 +42,14 @@ const Ride = () => {
         errors.destination = "Please enter destination";
       }
 
-      if (formvalues.date == "") {
+      if (formvalues.date === "") {
         seterror(false);
         errors.year = "Please select Date";
       } else {
         errors.year = "";
       }
 
-      if (formvalues.vacancy == "") {
+      if (formvalues.vacancy === "") {
         seterror(false);
         errors.branch = "Please select Vacancy";
       } else {

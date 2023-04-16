@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+.team{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    margin: 5rem 1rem;
+}
+.ex{
+    font-size: 24px;
+    color: rgb(224, 185, 114);
+}
+#agents{
+    margin:2rem 0;
+    font-size: 4rem;
+    color:#195372;
+
+}
+.team-opt{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
