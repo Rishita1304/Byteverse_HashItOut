@@ -21,6 +21,7 @@
 .ride__content{
     width: 60%;
     flex: 1;
+    z-index: -1;
 }
 .ride__form-input {
     /* position: absolute;
@@ -152,6 +153,7 @@ button {
   display: inline-block;
   background-color: #6f9cb5;
   color: var(--container-color);
+  width: 15rem;
   padding: 0.5rem 1rem;
   border-radius: 0.8rem;
   font-weight: var(--font-medium);
