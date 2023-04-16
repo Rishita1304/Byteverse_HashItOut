@@ -4,6 +4,7 @@ const login = async (req, res) => {
   try {
     const email = req.body.email;
     const password = req.body.password;
+    const a=0;
     const user = await userProfile.findOne({ email: email });
     if (email) {
       if (user.password === password) return res.status(200).json(user.email);
