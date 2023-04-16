@@ -6,25 +6,16 @@ import Navbar from "../../components/Navbar/Navbar";
 const Rides = () => {
   const [cards, setCards] = useState([]);
   const datacheck = {
-    start: "Akgec",
-    destination: "New Delhi",
+    start: localStorage.getItem("pickup"),
+    destination: localStorage.getItem("destination"),
+    time:localStorage.getItem("time"),
+    date:localStorage.getItem("date")
   };
   const url = `https://carpooling-1sqz.onrender.com/api/auth/allRides`;
   useEffect(() => {
     async function fetchData() {
       try {
-        // const response = await fetch(
-        //   "https://carpooling-1sqz.onrender.com/api/auth/allRides",
-        //   {
-        //     method: "POST",
-        //     body: JSON.stringify(datacheck),
-        //     headers: {
-        //       "Content-Type": "application/json",
-        //     },
-        //   }
-        // ).then(async(response) => await response.json())
-        // .then(jsondata => console.log(jsondata))
-        // setCards(json);
+
         axios
           .post(
             "https://carpooling-1sqz.onrender.com/api/auth/allRides",

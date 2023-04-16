@@ -16,9 +16,7 @@ const Ride = () => {
   const [formerror, setformerror] = useState({});
 
   const userHandler = (e) => {
-    console.log("hola");
     const { name, value } = e.target;
-    console.log(e.target);
     setformvalues({ ...formvalues, [name]: value });
     console.log({name,value});
   };

@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const OfferSchema = new mongoose.Schema(
   {
    email:{type:String,required:true},
+   name:{type:String,required:true},
    start:{type:String,required:true},
    destination:{type:String,required:true},
    date:{type:String,required:true},

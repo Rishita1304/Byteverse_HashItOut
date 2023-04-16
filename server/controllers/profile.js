@@ -5,7 +5,8 @@ const profile = async (req, res) => {
     const email=req.body.email;
     const user=await userProfile.findOne({email:email});
         const offers=await RideOffer.find({email:email})
-    return res.status(200).json({user,offers})
+    if(user){return res.status(200).json({user,offers})}
+    return res.status(400).json("No user found");
   } catch (error) {
     return res.status(500).json(error.message);
   }
