@@ -10,4 +10,5 @@ const Allrides = async (req, res) => {
   if (rides) return res.status(200).json(rides);
   return false;
 };
+
 module.exports = Allrides;
