@@ -7,7 +7,7 @@ const Team = () => {
   return (
     <div className='team'>
       <h4 className='ex'>Explore our Blogs</h4>
-        <h2 id="agents">Latest Blogs</h2>
+        <h2 id='agents'>Latest Blogs</h2>
         <div className="team-opt">
          { MemberData.map((val)=>{
               return (<div className="card-hook">

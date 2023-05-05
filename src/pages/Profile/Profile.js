@@ -1,4 +1,4 @@
-  import { Link } from "react-router-dom";
+  // import { Link } from "react-router-dom";
   import "./Profile.css";
   import img1 from '../../images/user.png'
   

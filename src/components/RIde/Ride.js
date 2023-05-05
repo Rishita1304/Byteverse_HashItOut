@@ -61,7 +61,7 @@ const Ride = () => {
     const validateform = (e) => {
       e.preventDefault();
       setformerror(errors_form());
-      if (error == true) {
+      if (error === true) {
         console.log(formvalues);
       }
     };

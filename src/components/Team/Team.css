@@ -8,13 +8,19 @@
     margin: 5rem 1rem;
 }
 .ex{
-    font-size: 24px;
-    color: rgb(224, 185, 114);
+    color: #f9a826;
+    display: flex;
+    font-weight: 500;
+    margin: 10px 0;
+    font-size: 20px;
+    align-self: center;
 }
 #agents{
-    margin:2rem 0;
-    font-size: 4rem;
-    color:#195372;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 20px 0;
+    color: #36648a;
+    /* text-align: start; */
 
 }
 .team-opt{

@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
       </div>
         <div className="footer__bottom">
-              <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
+              <p className="section__descriptionnnnn">
                 <AiOutlineCopyrightCircle/>Copyright {year}, Developed by
                 Team HashItOut. All rights reserved.
               </p>

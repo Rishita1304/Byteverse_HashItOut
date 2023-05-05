@@ -1,0 +1,114 @@
+.about__section-item {
+    column-gap: 3rem;
+    display: flex;
+    /* row-gap: 0.5rem; */
+}
+.about__top{
+      margin-top: 2rem;
+
+  }
+  
+  .about__section-item p i {
+    color: #f9a826;
+    font-size: 1.1rem;
+  }
+  
+  @media only screen and (max-width: 992px) {
+    .about__section-content h2 {
+      font-size: 1.5rem;
+    }
+    .about__section-item {
+      column-gap: 3rem;
+    }
+    .about__section-item p {
+      font-size: 0.6rem;
+      margin-bottom: 0;
+    }
+  
+    .section__description i {
+      font-size: 0.8rem !important;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .about__img {
+      margin-top: 30px;
+    }
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .about__section {
+      margin-top: 280px;
+    }
+  }
+.roww{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.about__section-content{
+    margin-left: 40px;
+}
+.col{
+    padding: 30px;
+    width: 100%;
+    /* margin-left: 20px; */
+}
+.coll{
+    padding: 5px;
+    width: 100%;
+    /* margin-left: 20px; */
+}
+.imgg{
+    height: 280px;
+}
+.imggg{
+    height: 380px;
+    margin: auto;
+}
+.section__titlee{
+    font-size: 28px;
+    margin-top: 10px;
+    color: #36648a;
+    text-align: start;
+}
+.section__titleee{
+    font-size: 20px;
+    margin-top: 10px;
+    color: #455a6b;
+    text-align: start;
+}
+.section__subtitle{
+    color: #f9a826;
+    display: flex;
+    margin-top: 10px;
+    font-size: 25px;
+    align-self: flex-start;
+}
+.section__description{
+    margin-top: 20px;
+    line-height: 30px;
+    font-size: 14px;
+    width: 90%;
+    color: rgb(92, 101, 101);
+    text-align: start;
+}
+.section__descriptionn{
+    margin-top: 10px;
+    line-height: 30px;
+    font-size: 14px;
+    width: 90%;
+    color: rgb(92, 101, 101);
+    text-align: start;
+}
+.section__descriptionnn{
+    margin-bottom: 10px;
+    line-height: 20px;
+    font-size: 14px;
+    width: 90%;
+    color: rgb(92, 101, 101);
+    text-align: start;
+}
+.iconn{
+    color:#f9a826;
+}

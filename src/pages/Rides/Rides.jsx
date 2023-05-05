@@ -9,7 +9,7 @@ const Rides = () => {
     start: "AKGEC",
     destination: "New Delhi",
   };
-  const url = `https://carpooling-1sqz.onrender.com/api/auth/allRides`;
+  // const url = `https://carpooling-1sqz.onrender.com/api/auth/allRides`;
   useEffect(() => {
     async function fetchData() {
       try {
@@ -34,7 +34,7 @@ const Rides = () => {
       }
     }
     fetchData();
-  }, [url]);
+  });
 
   return (
     <>
