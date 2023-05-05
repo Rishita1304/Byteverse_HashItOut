@@ -73,7 +73,7 @@ const Login = () => {
                 <button type="submit" className='logInsubmit'>Login</button>
             </form>
             <NavLink to="/forgetPassword" className="forgetPassword">Forgotten Password?</NavLink>
-            <h4>Not Have An Account? <Link className="register">Register</Link></h4>
+            <h4>Not Have An Account? <Link className="register" to="/register">Register</Link></h4>
             
         </div>
     </div>

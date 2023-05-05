@@ -74,7 +74,10 @@ const Request = () => {
       console.log(formvalues);
     }
   }
-
+  localStorage.setItem("pickup",formvalues.pickup)
+  localStorage.setItem("destination",formvalues.destination)
+  localStorage.setItem("time",formvalues.time)
+  localStorage.setItem("vacancy",formvalues.vacancy)
 
   return (
     <div className='request'>

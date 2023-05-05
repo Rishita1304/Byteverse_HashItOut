@@ -1,7 +1,7 @@
 .main{
   border: 1px solid black;
   width: 40vw;
-  height:60vh;
+  height:65vh;
 }
 .card_logo{
     background-size: cover;
@@ -13,4 +13,7 @@
 }
 .card_button{
     margin-top: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    background-color: aqua;
 }
