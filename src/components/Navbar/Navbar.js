@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo1.png";
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
@@ -28,7 +28,11 @@ const Navbar = () => {
 
   return (
     <div className="navbar" style={navbarStyle}>
+      <div className="this">
+
       <img src={logo} alt="" className="carlogo" />
+      <h2>Updriven</h2>
+      </div>
       <nav>
         <Link to="/" className="link">
           Home

@@ -9,11 +9,12 @@
 }
 .card_content{
     margin-bottom: 1rem;
-    text-align: center;
+    margin-left: 3.5rem;
+    text-align: start;
 }
 .card_button{
     margin-top: 1rem;
     border-radius: 0.5rem;
     border: 1px solid black;
-    background-color: aqua;
+    background-color: rgb(140, 171, 220);
 }

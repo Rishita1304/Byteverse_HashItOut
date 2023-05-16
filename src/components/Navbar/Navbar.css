@@ -70,6 +70,10 @@
     color: #b1d8ed;
     color: #0c557c;
 }
+.this{
+    display: flex;
+    align-items: center;
+}
 #offer{
     background-color: #6f9cb5;
     color:black;

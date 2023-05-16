@@ -3,6 +3,7 @@ import "./Register.css";
 import { useState } from 'react';
 import { Link} from 'react-router-dom';
 import axios from "axios";
+import img1 from '../../images/registerpic.png'
 export var email;
 const Register = () => {
 
@@ -121,23 +122,35 @@ const Register = () => {
     }).catch((err)=>{console.log(err)});}
   return (
     <>
-    <div className="hide">
-    </div>
+    
     <div className='registerUser'>    
+    <div className="hide">
+        <img src={img1} className='img3' width={"620em"} />
+    </div>
       <div className='registerControl'>
         <form className="registerPage" onSubmit={submitHandler}>
+            <div className='upper'>
+
+            <div className='first3'>
+
             <input type="text" name="full_name" value={formvalues.full_name} placeholder="Full Name" className="inputfieldss" onChange={userHandler}/>
             <p className='registererror'>{formerror.full_name}</p>
             <input type="text" name="mobile_number" value={formvalues.mobile_number} placeholder="Mobile Number" className="inputfieldss" onChange={userHandler}/>
             <p className='registererror'>{formerror.mobile_number}</p>
             <input type="text" name="email" value={formvalues.email} placeholder="Email Address" onChange={userHandler} className="inputfieldss"/>
             <p className='registererror'>{formerror.email}</p>
+            </div>
+            <div className='second3'>
             <input type="text" name="age" value={formvalues.age} placeholder="Age" onChange={userHandler} className="inputfieldss"/>
             <p className='registererror'>{formerror.age}</p>
             <input type="password" name="password" value={formvalues.password} placeholder="Password" onChange={userHandler} className="inputfieldss"/>
             <p className='registererror'>{formerror.password}</p>
             <input type="password" name="password2" value={formvalues.password2} placeholder="Confirm Password" onChange={userHandler} className="inputfieldss"/>
             <p className='registererror'>{formerror.password2}</p>
+            </div>
+            </div>
+            <div className='lower'>
+
             <label id="gender">Gender</label>
             <div className="genderControl">
                 <div className="genderCategory">
@@ -153,9 +166,10 @@ const Register = () => {
                     <label>Others</label><br/>
                 </div>
             </div>
+            </div>
+        </form>
             <p className='registererror'>{formerror.gender}</p>
             <button type="submit" className="inputfieldss registerbtn">Register</button>
-        </form>
         <h4>Already Have An Account?<Link to='/login' className="loginback">LogIn</Link></h4>
       </div>
     </div>

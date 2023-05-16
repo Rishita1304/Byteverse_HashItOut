@@ -12,23 +12,28 @@
   }
   
   .popup-inner {
-    background-color: #6f9cb5;;
-    padding: 20px;
+    background-color: #bad0dc;;
+    padding: 0 20px 20px 20px;
+    width: 40vw;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   
   .close-btn {
-    /* position: absolute; */
-    /* top: 10px;
-    right: 50px; */
+    position:relative;
+    top: 0;
+    right: -220px;
     font-size: 24px;
     font-weight: bold;
-    background-color: #6f9cb5;
+    background-color: #bad0dc;
     border: none;
     cursor: pointer;
   }
-  
-  .content {
-    margin-bottom: 20px;
-  }
+
+  .card_button{
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    background-color: #bad0dc;
+}
+
