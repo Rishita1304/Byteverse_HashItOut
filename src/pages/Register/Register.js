@@ -1,175 +1,89 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import "./Register.css";
-import { useState } from 'react';
-import { Link} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import axios from "axios";
 import img1 from '../../images/registerpic.png'
-export var email;
+
 const Register = () => {
 
-    const initialvalues={
-        full_name:"",
-        mobile_number:"",
-        email:"",
-        gender:"",
-        age:"",
-        password:"",
-        password2:"",
-    }
-    const [formvalues,setformvalues]=useState(initialvalues);
-    const [formerror,setformerror]=useState({});
-    const [noerror,setnoerror]=useState(false);
+    const name = useRef()
+    const number = useRef()
+    const email = useRef()
+    const age = useRef()
+    const password = useRef()
+    const passwordAgain = useRef()
+    const gender = useRef()
+  
+    const navigate = useNavigate();
+  
+    const handleClick = async(e) =>{
+      e.preventDefault();
+      if(passwordAgain.current.value !== password.current.value){
+        passwordAgain.current.setCustomValidity("Passwords don't match!");
+      }
+      else{
+        const user = {
+        name: name.current.value,
+        number:number.toString().current.value,
+        age:age.current.value,
+        email:email.current.value,
+        password:password.current.value,
+        passwordAgain: passwordAgain.current.value,
+        gender: gender.current.value
 
-    const userHandler=(e)=>{
-        const {name,value}=e.target;
-        setformvalues({...formvalues,[name]:value});
-    }
-    const submitHandler=(e)=>{
-        console.log("HI");
-        e.preventDefault();
-    const error=()=>{
-        const errors={}
-        setnoerror(true);
-
-        const cname=/^[a-zA-Z\.\'\-]{3,50}(?: [a-zA-Z\.\'\-]{3,50})+$/;
-        const cmobile_num= /^[7-9]([0-9]){9}$/;
-        const cemail=/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
-        const cage=/^[1-9]([0-9]){1}$/;
-        const password=/^[a-zA-z0-9*#_$]{5,20}$/
-
-        if(formvalues.full_name===""){
-            errors.full_name="This field can't be empty";
-            setnoerror(false);
         }
-        else if(cname.test(formvalues.full_name)){
-            errors.full_name=""
+        try{
+          const res = await axios.post("http://localhost:4000/api/auth/register", user)
+          console.log(res);
+          navigate("/login")
+        }catch(err){
+          console.log(err);
         }
-        else{
-            errors.full_name="Invalid name";
-            setnoerror(false);
-            
-        }
-
-        if(cmobile_num.test(formvalues.mobile_number)){
-            errors.mobile_number="";
-        }
-        else{
-            setnoerror(false);
-            errors.mobile_number="Invalid Mobile Number"
-        }
-
-        if(cemail.test(formvalues.email)){
-            errors.email="";
-        }
-        else{
-            setnoerror(false)
-            errors.email="Invalid Email Address";
-        }
-        if(!cage.test(formvalues.age)){
-            setnoerror(false);
-            errors.age="Enter your Age";
-        }
-        else{
-            errors.age="";
-        }
-
-        if(formvalues.gender===""){
-            setnoerror(false);
-            errors.gender="This field is required"
-        }
-        else{
-            errors.gender="";
-        }
-
-
-        if(formvalues.password===""){
-            errors.password="This field is required"
-            setnoerror(false)
-        }
-        else{
-            errors.password="";
-        }
-
-        if(formvalues.password2==="")
-        {
-            setnoerror(false);
-            errors.password2="Enter Confirm Password"
-        }
-        else if(formvalues.password!=formvalues.password2){
-            setnoerror(false);
-            errors.password2="Password Not Matched"
-        }
-        else{
-            errors.password2="";
-        }
-
-        return errors;
-    }
-    const dataCheck = {
-        full_name: formvalues.full_name,
-        mobile_number:formvalues.mobile_number.toString(),
-        email:formvalues.email,
-        gender:formvalues.gender,
-        password:formvalues.password
-        // password2: formValues.confirmPassword,
-      };
-    axios.post("https://carpooling-1sqz.onrender.com/api/auth/register",dataCheck).then((e)=>{
-        console.log(e.data);
-        email=e.data.email
-        console.log(email);
-        localStorage.setItem("email", dataCheck.email);
-        localStorage.setItem("name",dataCheck.full_name)
-    }).catch((err)=>{console.log(err)});}
+      }
+    } 
   return (
     <>
     
     <div className='registerUser'>    
     <div className="hide">
-        <img src={img1} className='img3' width={"620em"} />
+        <img src={img1} alt='' width={"580em"} />
     </div>
       <div className='registerControl'>
-        <form className="registerPage" onSubmit={submitHandler}>
+        <form className="registerPage">
             <div className='upper'>
 
             <div className='first3'>
 
-            <input type="text" name="full_name" value={formvalues.full_name} placeholder="Full Name" className="inputfieldss" onChange={userHandler}/>
-            <p className='registererror'>{formerror.full_name}</p>
-            <input type="text" name="mobile_number" value={formvalues.mobile_number} placeholder="Mobile Number" className="inputfieldss" onChange={userHandler}/>
-            <p className='registererror'>{formerror.mobile_number}</p>
-            <input type="text" name="email" value={formvalues.email} placeholder="Email Address" onChange={userHandler} className="inputfieldss"/>
-            <p className='registererror'>{formerror.email}</p>
+            <input type="text" name="name" placeholder="Full Name" className="inputfieldss" ref={name}/>
+            <input type="text" name="number" placeholder="Mobile Number" className="inputfieldss"ref={number}/>
+            <input type="password" name="password" placeholder="Password" className="inputfieldss" ref={password}/>
             </div>
             <div className='second3'>
-            <input type="text" name="age" value={formvalues.age} placeholder="Age" onChange={userHandler} className="inputfieldss"/>
-            <p className='registererror'>{formerror.age}</p>
-            <input type="password" name="password" value={formvalues.password} placeholder="Password" onChange={userHandler} className="inputfieldss"/>
-            <p className='registererror'>{formerror.password}</p>
-            <input type="password" name="password2" value={formvalues.password2} placeholder="Confirm Password" onChange={userHandler} className="inputfieldss"/>
-            <p className='registererror'>{formerror.password2}</p>
+            <input type="text" name="age" placeholder="Age" className="inputfieldss" ref={age}/>
+            <input type="text" name="email" placeholder="Email Address" className="inputfieldss" ref={email}/>
+            <input type="password" name="passwordAgain" placeholder="Confirm Password" className="inputfieldss" ref={passwordAgain}/>
             </div>
             </div>
             <div className='lower'>
 
-            <label id="gender">Gender</label>
+            <label id="gender"><strong>Gender</strong></label>
             <div className="genderControl">
                 <div className="genderCategory">
-                    <input type="radio" name="gender" value="Male" onChange={userHandler}/>
+                    <input type="radio" name="gender" value="Male" ref={gender}/>
                     <label>Male</label><br/>
                 </div>
                 <div className="genderCategory">
-                    <input type="radio" name="gender" value="Female" onChange={userHandler}/>
+                    <input type="radio" name="gender" value="Female" ref={gender}/>
                     <label>Female</label><br/>
                 </div>
                 <div className="genderCategory">
-                    <input type="radio" name="gender" value="Custom" onChange={userHandler}/>
+                    <input type="radio" name="gender" value="Custom" ref={gender}/>
                     <label>Others</label><br/>
                 </div>
             </div>
             </div>
+            <button type="submit" className="inputfieldss registerbtn" onClick={handleClick}>Register</button>
         </form>
-            <p className='registererror'>{formerror.gender}</p>
-            <button type="submit" className="inputfieldss registerbtn">Register</button>
         <h4>Already Have An Account?<Link to='/login' className="loginback">LogIn</Link></h4>
       </div>
     </div>

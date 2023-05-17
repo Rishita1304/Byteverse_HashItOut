@@ -1,79 +1,49 @@
-import React, { useState } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import React, { useContext, useRef, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import {AuthContext} from '../../context/AuthContext'
 import "./Login.css";
-// import { email } from '../Register/Register';
 import axios from "axios";
-export let profile_data={
-    id:"",
-    name:"",
-    email:"",
-    mobile_no:"",
-    age:"",
-}
 
 const Login = () => {
     const initialvalues={
         email:"",
         password:""
     }
-    const navigate=useNavigate();
     const [formvalues,setformvalues]=useState(initialvalues);
-    const [formerror,setformerror]=useState({});
-    const [noerror,setnoerror]=useState(false);
 
     const userHandler=(e)=>{
         const {name,value}=e.target;
         setformvalues({...formvalues,[name]:value});
     }
-    const loginSubmitHandler=(e)=>{
-        e.preventDefault();
-    const error=()=>{
-        const errors={}
-        setnoerror(true);
-        const cmobile_num= /^[7-9]([0-9]){9}$/;
 
-        if(cmobile_num.test(formvalues.mobile_number)){
-            errors.email="";
-        }
-        else{
-            setnoerror(false)
-            errors.email="**Invalid Mobile Number";
-        }
+    const email = useRef();
+    const password = useRef();
 
-        if(formvalues.password===""){
-            errors.password="**This field is required"
-            setnoerror(false)
-        }
-        else{
-            errors.password="";
-        }
-
-        return errors;
+    const {user, isFetching, error, dispatch} = useContext(AuthContext);
+    console.log(user);
+    const handleClick = async(e) => {
+      e.preventDefault();
+      dispatch({type: "LOGIN_START"});
+      try{
+          const res = await axios.post("http://localhost:4000/api/auth/login", {email: email.current.value,password: password.current.value});
+          dispatch({type: "LOGIN_SUCCESS", payload: res.data});
+      }catch(err){
+          dispatch({type: "LOGIN_FAILURE", payload: err});
+      }
     }
-    const dataCheck={
-        email:formvalues.email,
-        password:formvalues.password
-    }
-   console.log(dataCheck);
-    axios.post("https://carpooling-1sqz.onrender.com/api/auth/login",dataCheck).then((e)=>{
-        console.log(e.data);
-        localStorage.setItem("FullName", dataCheck.full_name);
-    }).catch((err)=>{console.log(err)});}
 
     return(
         <>
     <div className='login'>       
         <div class="loginControls">
-            <form className="loginPage" onSubmit={loginSubmitHandler}>
+            <form className="loginPage" onSubmit={handleClick}>
 
-                <input type="email" name="email" value={formvalues.email} placeholder="Email" onChange={userHandler}/>
-                <p className='loginerror'>{formerror.email}</p>
-                <input type="password" name="password" value={formvalues.password} placeholder="Password" onChange={userHandler}/>
-                <p className='loginerror'>{formerror.password}</p>
-                <button type="submit" className='logInsubmit'>Login</button>
+                <input type="email" name="email" placeholder="Email" onChange={userHandler} ref={email}/>
+                <input type="password" name="password" placeholder="Password" onChange={userHandler} ref={password}/>
+                <button type="submit" className='logInsubmit'>Log in</button>
             </form>
             <NavLink to="/forgetPassword" className="forgetPassword">Forgotten Password?</NavLink>
-            <h4>Not Have An Account? <Link className="register" to="/register">Register</Link></h4>
+            <h4>Not Have An Account? <Link className="register" to="/register" disabled={isFetching}>Register</Link></h4>
             
         </div>
     </div>

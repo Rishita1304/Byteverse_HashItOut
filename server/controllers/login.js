@@ -6,7 +6,10 @@ const login = async (req, res) => {
     const password = req.body.password;
     const user = await userProfile.findOne({ email: email });
     if (user) {
-      if (user.password === password) return res.status(200).json(user.email);
+      if (user.password === password) {
+        const {password, ...other} = user._doc;
+        return res.status(200).json({...other});
+      }
       else return res.status(400).json("Password not matched!");
     } else return res.status(400).json("email not found");
   } catch (err) {

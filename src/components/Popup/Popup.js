@@ -107,11 +107,6 @@ export default function Popup({data}) {
           Dear {data.name}, Thank for connecting with us! We have informed your pooler about the ride sharing.
           </Typography>
         </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            Okay
-          </Button>
-        </DialogActions>
       </BootstrapDialog>
     </div>
   );

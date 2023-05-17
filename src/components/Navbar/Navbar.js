@@ -6,10 +6,10 @@ import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  // const {user} = useContext(AuthContext);
-  const user = localStorage.getItem("email");
+  const {user} = useContext(AuthContext);
   const removeUser = () => {
-    localStorage.removeItem("email");
+    localStorage.clear();
+    window.location.reload();
   };
   useEffect(() => {
     function handleScroll() {

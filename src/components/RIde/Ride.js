@@ -60,15 +60,8 @@ const Ride = () => {
 
       return errors;
     };
-    const validateform = (e) => {
-      e.preventDefault();
-      setformerror(errors_form());
-      if (error === true) {
-        console.log(formvalues);
-      }
-    };
-    const email=localStorage.getItem("email");
-    const name=localStorage.getItem("name");
+    const email=JSON.parse(localStorage.getItem("user")).email;
+    const name=localStorage.getItem("name")?.full_name;
     console.log(name);
     console.log(email);
     const datacheck={

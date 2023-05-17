@@ -10,6 +10,6 @@ router.post("/request",request);
 router.post("/register",User);
 router.post("/allRides",Allrides);
 router.post("/offerRide",offer);
-router.get("/profile",profile);
-router.get("/login",login);
+router.get("/profile/:email",profile);
+router.post("/login",login);
 module.exports=router;

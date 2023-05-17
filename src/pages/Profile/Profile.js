@@ -2,21 +2,27 @@ import { Link } from "react-router-dom";
 import "./Profile.css";
 import img1 from "../../images/user.png";
 import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import {AuthContext} from "../../context/AuthContext"
 
 export default function Profile() {
-  const email = localStorage.getItem("email");
-  const datacheck = {
-    email: email,
-  };
-  console.log(datacheck.email);
-  axios
-    .get("https://carpooling-1sqz.onrender.com/api/auth/profile", datacheck)
-    .then((e) => {
-      console.log(e);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+
+  // const {user} = useContext(AuthContext)
+  const res = JSON.parse(localStorage.getItem("user"));
+  const email = res.email;
+  // console.log(res.email)
+
+  const [user, setUser] = useState({})
+  useEffect(()=>{
+    const fetchUser = async () => {
+
+      const rest =await axios.get("http://localhost:4000/api/auth/profile/" + email );
+      console.log(rest.data);
+      setUser(rest.data)
+    };
+    fetchUser();
+  },[])
+
   return (
     <div className="user">
       <div className="userTitleContainer">User Profile</div>
@@ -25,7 +31,7 @@ export default function Profile() {
           <div className="userShowTop">
             <img src={img1} alt="" className="userShowImg" />
             <div className="userShowTopTitle">
-              <span className="userShowUsername">Anna Becker</span>
+              <span className="userShowUsername">{user.full_name}</span>
             </div>
           </div>
           <div className="userShowBottom">
@@ -36,9 +42,9 @@ export default function Profile() {
                 <span className="userShowTitle">Gender</span>
               </div>
               <div className="userShowInfo2">
-                <span className="userShowInfoTitle">9875443125</span>
-                <span className="userShowInfoTitle">abc@gmail.com</span>
-                <span className="userShowInfoTitle">Female</span>
+                <span className="userShowInfoTitle">{user.mobile_number}</span>
+                <span className="userShowInfoTitle">{user.email}</span>
+                <span className="userShowInfoTitle">{user.gender}</span>
               </div>
             </div>
             <div className="second">
