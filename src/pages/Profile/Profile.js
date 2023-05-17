@@ -31,7 +31,7 @@ export default function Profile() {
           <div className="userShowTop">
             <img src={img1} alt="" className="userShowImg" />
             <div className="userShowTopTitle">
-              <span className="userShowUsername">{user.full_name}</span>
+              <span className="userShowUsername">{user.name}</span>
             </div>
           </div>
           <div className="userShowBottom">
@@ -42,7 +42,7 @@ export default function Profile() {
                 <span className="userShowTitle">Gender</span>
               </div>
               <div className="userShowInfo2">
-                <span className="userShowInfoTitle">{user.mobile_number}</span>
+                <span className="userShowInfoTitle">{user.number}</span>
                 <span className="userShowInfoTitle">{user.email}</span>
                 <span className="userShowInfoTitle">{user.gender}</span>
               </div>

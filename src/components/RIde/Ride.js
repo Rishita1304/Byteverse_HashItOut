@@ -61,7 +61,7 @@ const Ride = () => {
       return errors;
     };
     const email=JSON.parse(localStorage.getItem("user")).email;
-    const name=localStorage.getItem("name")?.full_name;
+    const name=localStorage.getItem("name")?.name;
     console.log(name);
     console.log(email);
     const datacheck={
