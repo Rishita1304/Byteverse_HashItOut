@@ -7,19 +7,29 @@ import 'reactjs-popup/dist/index.css';
 import Navbar from "../../components/Navbar/Navbar";
 const Rides = () => {
   const [cards, setCards] = useState([]);
-
   const datacheck = {
     start: localStorage.getItem("pickup"),
     destination: localStorage.getItem("destination"),
     time:localStorage.getItem("time"),
-    date:localStorage.getItem("date")    
+    date:localStorage.getItem("date")
   };
+  // const url = `https://carpooling-1sqz.onrender.com/api/auth/allRides`;
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = axios.post("https://carpooling-1sqz.onrender.com/api/auth/allRides", datacheck)
-        console.log(res.data);
-        setCards(res.data)
+
+        axios
+          .post(
+            "https://carpooling-1sqz.onrender.com/api/auth/allRides",
+            datacheck
+          )
+          .then((e) => {
+            console.log(e.data);
+            setCards(e.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       } catch (error) {
         console.log(error);
       }
