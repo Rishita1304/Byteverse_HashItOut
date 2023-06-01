@@ -13,7 +13,6 @@ const Rides = () => {
     time:localStorage.getItem("time"),
     date:localStorage.getItem("date")
   };
-  // const url = `https://carpooling-1sqz.onrender.com/api/auth/allRides`;
   useEffect(() => {
     async function fetchData() {
       try {
