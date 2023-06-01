@@ -3,6 +3,7 @@ import "./Register.css";
 import { Link, useNavigate} from 'react-router-dom';
 import axios from "axios";
 import img1 from '../../images/registerpic.png'
+import { publicRequest } from '../../Request';
 
 const Register = () => {
 
@@ -33,7 +34,7 @@ const Register = () => {
 
         }
         try{
-          const res = await axios.post("http://localhost:4000/api/auth/register", user)
+          const res = await publicRequest.post("api/auth/register", user)
           console.log(res);
           navigate("/login")
         }catch(err){

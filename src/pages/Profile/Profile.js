@@ -4,6 +4,7 @@ import img1 from "../../images/user.png";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import {AuthContext} from "../../context/AuthContext"
+import { publicRequest } from "../../Request";
 
 export default function Profile() {
 
@@ -16,7 +17,7 @@ export default function Profile() {
   useEffect(()=>{
     const fetchUser = async () => {
 
-      const rest =await axios.get("http://localhost:4000/api/auth/profile/" + email );
+      const rest =await publicRequest.get("api/auth/profile/" + email );
       console.log(rest.data);
       setUser(rest.data)
     };

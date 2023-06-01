@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import img1 from "../../images/Carpool-rafiki.png";
 import "./Ride.css";
 import axios from "axios";
+import { publicRequest } from "../../Request";
 const Ride = () => {
   const initialvalues = {
     pickup: "",
@@ -75,7 +76,7 @@ const Ride = () => {
       type:formvalues.type,
       time:formvalues.time
     }
-    axios.post("https://carpooling-1sqz.onrender.com/api/auth/offerRide",datacheck).then((e)=>{
+    publicRequest.post("api/auth/offerRide",datacheck).then((e)=>{
       console.log(e.data);
     }).catch((err)=>{console.log(err);})
   };

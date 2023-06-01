@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./rides.css";
 import Card from "../../components/Card/Card";
-import axios from "axios";
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import Navbar from "../../components/Navbar/Navbar";
+import { publicRequest } from "../../Request";
 const Rides = () => {
   const [cards, setCards] = useState([]);
   const datacheck = {
@@ -17,9 +16,9 @@ const Rides = () => {
     async function fetchData() {
       try {
 
-        axios
+        publicRequest
           .post(
-            "https://carpooling-1sqz.onrender.com/api/auth/allRides",
+            "api/auth/allRides",
             datacheck
           )
           .then((e) => {
