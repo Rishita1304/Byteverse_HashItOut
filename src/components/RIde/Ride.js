@@ -61,8 +61,8 @@ const Ride = () => {
 
       return errors;
     };
-    const email=JSON.parse(localStorage.getItem("user")).email;
-    const name=localStorage.getItem("name")?.name;
+    const email=JSON.parse(localStorage.getItem("user"))?.email;
+    const name=JSON.parse(localStorage.getItem("user"))?.name;
     console.log(name);
     console.log(email);
     const datacheck={
@@ -78,7 +78,7 @@ const Ride = () => {
     }
     publicRequest.post("api/auth/offerRide",datacheck).then((e)=>{
       console.log(e.data);
-    }).catch((err)=>{console.log(err);})
+    }).catch((err)=>{console.log(err.message);})
   };
   return (
     <section className="ride section">

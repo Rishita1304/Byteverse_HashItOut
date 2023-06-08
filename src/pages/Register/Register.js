@@ -25,7 +25,7 @@ const Register = () => {
       else{
         const user = {
         name: name.current.value,
-        number:number.toString().current.value,
+        number:number.current.value,
         age:age.current.value,
         email:email.current.value,
         password:password.current.value,
