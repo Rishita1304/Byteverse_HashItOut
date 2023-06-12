@@ -3,9 +3,9 @@ import Navbar from './components/Navbar/Navbar';
 import {Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Register from './pages/Register/Register';
-import Login from './pages/Login/Login';
 import Contact from './pages/Contact/Contact'
 import OfferRide from './pages/OfferRide/OfferRide';
+import Login from "./pages/Login/Login.jsx"
 import Rides from './pages/Rides/Rides';
 import Profile from './pages/Profile/Profile';
 import { useContext } from 'react';

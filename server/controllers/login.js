@@ -1,4 +1,4 @@
-const User = require("../model/userProfile");
+const User = require("../model//User");
 const bcrypt = require('bcrypt')
 
 const login = async (req, res) => {
