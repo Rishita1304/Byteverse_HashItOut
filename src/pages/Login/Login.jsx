@@ -32,9 +32,9 @@ const Login = () => {
         e.preventDefault()
 
         if (password.length >= 6) {
-            setValidatePassword(true)
-            setSignupResReceived(false)
-            setBtnDisabled(true)
+            setValidatePassword(true);
+            setSignupResReceived(false);
+            setBtnDisabled(true);
             try {
                 const res = await publicRequest.post("/auth/register", {
                     name: name.trim(),
@@ -42,7 +42,7 @@ const Login = () => {
                     email,
                     password
                 })
-                setSignupRes(res)
+                setSignupRes(res);
 
                 setTimeout(() => {
                     gotoSignin()
