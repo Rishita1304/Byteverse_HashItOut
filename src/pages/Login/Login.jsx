@@ -10,6 +10,7 @@ import { LoginFailure, LoginStart, LoginSuccess } from '../../context/AuthAction
 
 const Login = () => {
     const loginRef = useRef()
+
     const gotoSignup = () => {
         loginRef.current.classList.add("sign-up-mode")
     }
@@ -23,7 +24,7 @@ const Login = () => {
     const [validatePassword, setValidatePassword] = useState()
     const [signupRes, setSignupRes] = useState({})
     const [name, setName] = useState("")
-    const [username, setUsername] = useState("")
+    const [number, setNumber] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [signupResReceived, setSignupResReceived] = useState()
@@ -36,9 +37,9 @@ const Login = () => {
             setSignupResReceived(false)
             setBtnDisabled(true)
             try {
-                const res = await publicRequest.post("/auth/register", {
-                    name: name.trim(),
-                    username: username.trim(),
+                const res = await publicRequest.post("auth/register", {
+                    name,
+                    number,
                     email,
                     password
                 })
@@ -50,7 +51,7 @@ const Login = () => {
                 }, 1500)
 
                 setName('')
-                setUsername('')
+                setNumber('')
                 setEmail('')
                 setPassword('')
             } catch (err) {
@@ -122,7 +123,6 @@ const Login = () => {
                                 value={loginEmail}
                                 spellCheck="false"
                                 required
-                                autoComplete="on"
                                 onChange={(e) => setLoginEmail(e.target.value.trim())}
                             />
                         </div>
@@ -156,7 +156,7 @@ const Login = () => {
                             <div className="usercreated">{signupRes.data.status}</div>
                         )}
                         <div className="input-field" style={{ border: signupRes.data?.name ? '1px solid #FF1818' : 'none' }}>
-                            <i className="fab fa-adn"></i>
+                            <i className="fas fa-user"></i>
                             <input
                                 type="text"
                                 placeholder="Name"
@@ -171,31 +171,12 @@ const Login = () => {
                                 </div>
                             )}
                         </div>
-                        <div className="input-field" style={{ border: signupRes.data?.username ? '1px solid #FF1818' : 'none' }}>
-                            <i className="fas fa-user"></i>
-                            <input
-                                type="text"
-                                placeholder="Username"
-                                value={username}
-                                autoComplete="off"
-                                spellCheck="false"
-                                required
-                                onChange={(e) => setUsername(e.target.value)}
-                            />
-                            {signupRes.status === 500 && (
-                                <div className="errormsg">
-                                    {signupRes.data.username || undefined}
-                                </div>
-                            )}
-                        </div>
                         <div className="input-field" style={{ border: signupRes.data?.email ? '1px solid #FF1818' : 'none' }}>
                             <i className="fas fa-envelope"></i>
                             <input
                                 type="email"
                                 placeholder="Email"
                                 value={email}
-                                autoComplete="off"
-                                spellCheck="false"
                                 required
                                 onChange={(e) => setEmail(e.target.value.trim())}
                             />
@@ -205,9 +186,24 @@ const Login = () => {
                                 </div>
                             )}
                         </div>
+                        <div className="input-field" style={{ border: signupRes.data?.number ? '1px solid #FF1818' : 'none' }}>
+                            <i className="fas fa-phone"></i>
+                            <input 
+                                type="text" 
+                                placeholder="Mobile Number" 
+                                value={number} 
+                                required
+                                autoComplete='off'
+                                onChange={(e) => setNumber(e.target.value)}
+                            />
+                            {signupRes.status === 500 && (
+                                <div className="errormsg">
+                                    {signupRes.data.number || undefined}
+                                </div>
+                            )}
+                        </div>
                         <div className="input-field password" style={{ border: validatePassword === false ? '1px solid #FF1818' : 'none' }}>
-                            <i
-                                className="fas fa-eye"
+                            <i className="fas fa-eye"
                                 onClick={() => setHideShowPassword(!hideshowPassword)}
                             ></i>
                             <input

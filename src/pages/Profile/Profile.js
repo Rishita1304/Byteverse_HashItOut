@@ -17,7 +17,7 @@ export default function Profile() {
   useEffect(()=>{
     const fetchUser = async () => {
 
-      const rest =await publicRequest.get("api/auth/profile/" + email );
+      const rest =await publicRequest.get("auth/profile/" + email );
       console.log(rest.data);
       setUser(rest.data)
     };

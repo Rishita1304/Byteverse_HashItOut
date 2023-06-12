@@ -5,6 +5,7 @@ const app = express();
 const cors = require("cors");
 const port = 4000 || process.env.PORT;
 const router = require("./routes/Route");
+const blogRouter = require("./routes/blogRoute");
 const mongoose = require("mongoose");
 mongoose
   .connect(process.env.DATABASE_KEY, {
@@ -30,6 +31,7 @@ app.use(express.urlencoded({ extended: false }));
 app.set("trust proxy", 1);
 app.use(cors());
 app.use("/api/auth", router);
+app.use("/api/blog", blogRouter);
 app.listen(port, () => {
   console.log(`Server running at ${port}`);
 });
