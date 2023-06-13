@@ -76,3 +76,21 @@
     width:20px;
     height: 20px;
 }
+.blog_btn{
+    display: flex;
+    justify-content: start;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    align-items: center;
+}
+.read_button{
+    background-color:#e8b158;
+    border-radius: 7px;
+    padding: 0.5rem;
+    align-items: center;
+    
+}
+.read_button:hover{
+    background-color:#e69f2d;
+
+}
