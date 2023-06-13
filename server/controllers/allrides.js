@@ -11,4 +11,20 @@ const Allrides = async (req, res) => {
   return false;
 };
 
+exports.updateRides = async({params,body},res) => {
+  try{
+
+    const id=params.id
+    const vacancy = body.vacancy;
+    const rides = await RideOffer.findByIdAndUpdate(
+      {_id: id} ,
+      { $set: {vacancy:vacancy-1} }
+      );
+      res.status(200).json(rides);
+    }catch(err){
+      res.status(500).json(err.message);
+    }
+
+}
+
 module.exports = Allrides;

@@ -19,10 +19,10 @@ const Footer = () => {
 
         <div className='footerOpt'>
            <h2>Discover</h2>
-          <Link to="/" className='links'>How to Rent</Link>
-          <Link to="/" className='links'>Privacy Policy</Link>
-          <Link to="/contact" className='links'>Contact Us</Link>
-          <Link to="/" className='links'>Be A member</Link>
+          <Link to="/" className='linkss'>How to Rent</Link>
+          <Link to="/" className='linkss'>Privacy Policy</Link>
+          <Link to="/contact" className='linkss'>Contact Us</Link>
+          <Link to="/" className='linkss'>Be A member</Link>
         </div>
 
         <div className='footerContact'>

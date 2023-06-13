@@ -18,7 +18,7 @@ const Rides = () => {
 
         publicRequest
           .post(
-            "api/auth/allRides",
+            "auth/allRides",
             datacheck
           )
           .then((e) => {

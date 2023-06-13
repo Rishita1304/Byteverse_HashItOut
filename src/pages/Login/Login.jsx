@@ -103,9 +103,6 @@ const Login = () => {
     }
     return (
         <div className="logincontainer" ref={loginRef}>
-            <Helmet>
-                <title>Sign in</title>
-            </Helmet>
 
             <div className="forms-container">
                 <div className="signin-signup">
