@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@blueprintjs/core": "^4.20.1",
     "@coreui/react": "^4.7.0",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
@@ -21,6 +22,8 @@
     "react-slick": "^0.29.0",
     "reactjs-popup": "^2.0.5",
     "reactstrap": "^9.1.9",
+    "sass": "^1.63.3",
+    "scss": "^0.2.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -10,6 +10,7 @@ import Rides from './pages/Rides/Rides';
 import Profile from './pages/Profile/Profile';
 import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
+import BlogPage from './pages/Blog/BlogPage';
 function App() {
   const {user} = useContext(AuthContext)
   return (
@@ -23,6 +24,7 @@ function App() {
          <Route path="/offeraride" element={user? <OfferRide/>: <Login/>}/>
          <Route path="/rides" element={user? <Rides/>: <Login/>}/>
          <Route path="/profile" element={user? <Profile/>: <Login/>}/>
+         <Route path="/blog" element={<BlogPage/>}/>
         </Routes>
     </div>
     </Router>
