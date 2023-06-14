@@ -20,7 +20,7 @@ const ContactBox = () => {
                     <label className='contact__form-tag'>Message</label>
                     <textarea name='project' cols='30' rows='40' className='contact__form-input' placeholder='Enter the message' />
                 </div>
-                <input className='button'
+                <input className='buttonn'
                     type="submit" value="Send" />
             </form>
         </div>

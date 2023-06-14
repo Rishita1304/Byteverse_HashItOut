@@ -76,7 +76,7 @@ const Ride = () => {
       type:formvalues.type,
       time:formvalues.time
     }
-    publicRequest.post("api/auth/offerRide",datacheck).then((e)=>{
+    publicRequest.post("auth/offerRide",datacheck).then((e)=>{
       console.log(e.data);
     }).catch((err)=>{console.log(err.message);})
   };

@@ -4,7 +4,7 @@ import Request from '../../components/Request/Request'
 import Team from '../../components/Team/Team'
 import Footer from '../../components/Footer/Footer'
 import About from '../../components/About/About'
-import Testimonial from '../../components/testimonials/testimonial'
+import Testimonials from '../../components/Testimonials/Testimonials'
 
 const Home = () => {
   return (
@@ -12,6 +12,7 @@ const Home = () => {
       <Navbar/>
       <Request/>
       <About/>
+      <Testimonials/>
       <Team/>
       <Testimonial/>
       <Footer/>
