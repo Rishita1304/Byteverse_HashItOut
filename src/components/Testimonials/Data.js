@@ -7,7 +7,6 @@ export const Data = [
         id: 1,
         image: img1,
         title: "John Roy",
-        description: "loren ipsem jasbcvbv snadvjn sdnf fckj nas fah ahbsfhbf hjbfahbf habshbfo hafbhoueyfb hjbfhboeu hbafuybuey hwbfgougf hbfoeowuef "
     },
     {
         id: 2,

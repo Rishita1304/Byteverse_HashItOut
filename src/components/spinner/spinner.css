@@ -1,14 +1,13 @@
-.stage {
+.spines{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    padding: 20px;
-    /* height: 100vh; */
+    /* position: relative; */
+    /* padding: 20px; */
+    height: 100vh;
     overflow: hidden;
 }
-
-.dot-typing {
+.spin-typing{
     position: relative;
     left: -9999px;
     width: 10px;
@@ -17,10 +16,9 @@
     background-color: #6f9cb5;
     color: #6f9cb5;
     box-shadow: 9984px 0 0 0 #6f9cb5, 9999px 0 0 0 #6f9cb5, 10014px 0 0 0 #6f9cb5;
-    animation: dot-typing 1.5s infinite linear;
+    animation: spin-typing 1.5s infinite linear;
 }
-
-@keyframes dot-typing {
+@keyframes spin-typing {
     0% {
         box-shadow: 9984px 0 0 0 #6f9cb5, 9999px 0 0 0 #6f9cb5, 10014px 0 0 0 #6f9cb5;
     }

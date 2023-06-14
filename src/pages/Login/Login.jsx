@@ -114,36 +114,16 @@ const Login = () => {
                         )}
                         <div className="input-field">
                             <i className="fas fa-envelope"></i>
-                            <input
-                                type="email"
-                                placeholder="Email"
-                                value={loginEmail}
-                                spellCheck="false"
-                                required
-                                onChange={(e) => setLoginEmail(e.target.value.trim())}
-                            />
+                            <input type="email" placeholder="Email" value={loginEmail} spellCheck="false" required onChange={(e) => setLoginEmail(e.target.value.trim())}/>
                         </div>
                         <div className="input-field password">
                             <i className="fas fa-eye" onClick={() => setHideShowPassword(!hideshowPassword)}></i>
-                            <input
-                                type={!hideshowPassword ? "password" : "text"}
-                                placeholder="Password"
-                                value={loginPassword}
-                                required
-                                onChange={(e) => setLoginPassword(e.target.value.trim())}
-                            />
+                            <input type={!hideshowPassword ? "password" : "text"} placeholder="Password" value={loginPassword} required onChange={(e) => setLoginPassword(e.target.value.trim())}/>
                             <div className="errormsg">
                                 {loginPasswordRequired ? "Fill out Password" : undefined}
                             </div>
                         </div>
-                        <button
-                            className="loginpage-btn"
-                            type="submit"
-                            onClick={handleLogin}
-                            disabled={btnDisabled}
-                        >
-                            Login
-                        </button>
+                        <button className="loginpage-btn" type="submit" onClick={handleLogin} disabled={btnDisabled}> Login </button>
                     </form>
 
                     <form className="form sign-up-form">
