@@ -76,7 +76,17 @@ form.sign-in-form {
   padding: 0 0.4rem;
   position: relative;
 }
+.forgetpass{
+  display: flex;
+  justify-content: end;
+  width: 75%;
+  margin: 0.3rem 0;
+  font-weight: 500;
+}
 
+.forgetpass:hover{
+  color: rgb(106, 105, 105);
+}
 
 .input-field i {
   text-align: center;

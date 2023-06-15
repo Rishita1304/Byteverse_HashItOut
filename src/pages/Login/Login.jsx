@@ -123,6 +123,11 @@ const Login = () => {
                                 {loginPasswordRequired ? "Fill out Password" : undefined}
                             </div>
                         </div>
+                        <div className='forgetpass'>
+                        <Link to="/forgot-password">
+                            Forgot Password?
+                        </Link>
+                        </div>
                         <button className="loginpage-btn" type="submit" onClick={handleLogin} disabled={btnDisabled}> Login </button>
                     </form>
 
