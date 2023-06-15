@@ -1,5 +1,5 @@
 import React from 'react'
-import './Testimonials.css'
+import './Test.css'
 import {Data} from './Data'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -10,7 +10,7 @@ import { Pagination , Navigation, HashNavigation} from "swiper";
 
 const Testimonials = () => {
   return (
-    <div className='testimonial container section'>
+    <div className='testimonial containers section'>
         <h2 className='test_title'>Our Client says</h2>
         <span className='test_subtitle'>Testimonials</span>   
         <Swiper className='test_container'
