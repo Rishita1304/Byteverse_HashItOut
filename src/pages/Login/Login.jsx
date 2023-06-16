@@ -1,5 +1,4 @@
 import { useContext, useRef, useState } from 'react'
-import { Helmet } from 'react-helmet'
 import './login.css'
 import Loader from '../../components/loader/Loader'
 import { Link } from 'react-router-dom'
@@ -122,6 +121,11 @@ const Login = () => {
                             <div className="errormsg">
                                 {loginPasswordRequired ? "Fill out Password" : undefined}
                             </div>
+                        </div>
+                        <div className='forgetpass'>
+                        <Link to="/forgot-password">
+                            Forgot Password?
+                        </Link>
                         </div>
                         <button className="loginpage-btn" type="submit" onClick={handleLogin} disabled={btnDisabled}> Login </button>
                     </form>

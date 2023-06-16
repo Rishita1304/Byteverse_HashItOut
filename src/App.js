@@ -10,7 +10,8 @@ import Rides from './pages/Rides/Rides';
 import Profile from './pages/Profile/Profile';
 import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
-import BlogPage from './pages/Blog/BlogPage';
+import ForgotPass from './pages/ForgotPassword/ForgotPass';
+import ResetPassword from './pages/ResetPassword/ResetPassword';
 function App() {
   const {user} = useContext(AuthContext)
   return (
@@ -24,7 +25,8 @@ function App() {
          <Route path="/offeraride" element={user? <OfferRide/>: <Login/>}/>
          <Route path="/rides" element={user? <Rides/>: <Login/>}/>
          <Route path="/profile" element={user? <Profile/>: <Login/>}/>
-         <Route path="/blog" element={<BlogPage/>}/>
+         <Route path="/forgot-password" element={user? <Profile/>: <ForgotPass/>}/>
+         <Route path="/reset-password/:id/:token" element={user? <Profile/>: <ResetPassword/>}/>
         </Routes>
     </div>
     </Router>
