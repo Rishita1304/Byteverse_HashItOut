@@ -4,7 +4,7 @@ import Request from '../../components/Request/Request'
 import Team from '../../components/Team/Team'
 import Footer from '../../components/Footer/Footer'
 import About from '../../components/About/About'
-import Testimonials from '../../components/testimonials/Testimonials'
+import Test from '../../components/test/Test'
 
 const Home = () => {
   return (
@@ -13,8 +13,7 @@ const Home = () => {
       <Request/>
       <About/>
       <Team/>
-      <Testimonials/>
-      <Team/>
+      <Test/>
       <Footer/>
     </>
   )

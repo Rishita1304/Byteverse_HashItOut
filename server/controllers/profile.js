@@ -1,5 +1,5 @@
 const User = require("../model/User");
-const RideOffer = require("../model/Offer");
+const RideOffer = require("../model/offers");
 const profile = async (req, res) => {
   try {
     const email = req.params.email;

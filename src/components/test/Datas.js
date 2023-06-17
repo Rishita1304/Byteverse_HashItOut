@@ -1,7 +1,7 @@
 import img1 from '../../images/testimonial1.png'
 import img2 from '../../images/testimonial2.png'
 import img3 from '../../images/testimonial3.png'
-export const Data = [
+export const Datas = [
     {
         id: 1,
         image: img1,

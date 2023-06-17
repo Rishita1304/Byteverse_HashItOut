@@ -1,4 +1,4 @@
-const RideOffer = require("../model/Offer");
+const RideOffer = require("../model/offers");
 
 const Allrides = async (req, res) => {
   const start = req.body.start;
