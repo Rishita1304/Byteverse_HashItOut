@@ -1,4 +1,4 @@
-const Request = require("../model/Booking")
+const Request = require("../model/bookings")
 
 const request = async({body},res)=>{
 try {
