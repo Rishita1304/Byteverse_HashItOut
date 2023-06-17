@@ -1,7 +1,7 @@
 import React from "react";
 import "./blog.css";
 import logo from "../../images/logo1.png";
-import "@blueprintjs/core/lib/css/blueprint.css";
+// import "@blueprintjs/core/lib/css/blueprint.css";
 import p1 from "../../images/blog-img/blog-1.jpg";
 const Blog = () => {
   return (

@@ -12,6 +12,7 @@ import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 import ForgotPass from './pages/ForgotPassword/ForgotPass';
 import ResetPassword from './pages/ResetPassword/ResetPassword';
+import BlogPage from './pages/Blog/BlogPage';
 function App() {
   const {user} = useContext(AuthContext)
   return (
@@ -22,6 +23,7 @@ function App() {
          <Route path="/register" element={user? <Navigate to='/'/>:<Register/>}/>
          <Route path="/login" element={user? <Navigate to='/'/>:<Login/>}/>
          <Route path="/contact" element={<Contact/>}/>
+         <Route path="/blog" element={<BlogPage/>}/>
          <Route path="/offeraride" element={user? <OfferRide/>: <Login/>}/>
          <Route path="/rides" element={user? <Rides/>: <Login/>}/>
          <Route path="/profile" element={user? <Profile/>: <Login/>}/>
