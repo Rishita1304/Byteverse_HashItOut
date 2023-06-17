@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from 'react'
-import './login.css'
+import './logins.css'
 import Loader from '../../components/loader/Loader'
 import { Link } from 'react-router-dom'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
