@@ -6,7 +6,7 @@ const offer = require("../controllers/offerRide");
 // const Register = require("../controllers/request");
 const profile = require("../controllers/profile");
 // const login = require("../controllers/login");
-const Allrides = require("../controllers/allRides");
+const Allrides = require("../controllers/allride");
 const { register } = require("../controllers/auth");
 const { login } = require("../controllers/auth");
 
