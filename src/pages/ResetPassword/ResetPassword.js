@@ -3,7 +3,7 @@ import './resetpass.css'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Loader from '../../components/loader/Loader';
-import { publicRequest, resetPassword } from '../../Request';
+import { publicRequest } from '../../Request';
 
 const ResetPassword = () => {
     const [validUrl, setValidUrl] = useState(true);
@@ -14,11 +14,12 @@ const ResetPassword = () => {
     const [loading, setLoading] = useState(false);
 	const param = useParams();
 
+
     console.log(validUrl);
 	useEffect(() => {
 		const verifyUrl = async () => {
 			try {
-				await resetPassword.get(`/reset-password/${param.id}/${param.token}`);
+				await publicRequest.get(`/reset-password/${param.id}/${param.token}`);
 				setValidUrl(true);
 			} catch (error) {
 				setValidUrl(false);
