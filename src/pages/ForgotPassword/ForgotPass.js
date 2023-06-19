@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './forgotpass.css'
 import axios from 'axios';
 import Loader from '../../components/loader/Loader';
+import { publicRequest } from '../../Request';
 
 const ForgotPass = () => {
 	const [email, setEmail] = useState("");
@@ -13,8 +14,7 @@ const ForgotPass = () => {
 		e.preventDefault();
 		try {
             setLoading(true);
-			const url = `http://localhost:4000/api/reset-password/`;
-			const { data } = await axios.post(url, { email });
+			const { data } = await publicRequest.post('/reset-password/', { email });
 			setMsg(data.message);
             setLoading(false);
 			setError("");
