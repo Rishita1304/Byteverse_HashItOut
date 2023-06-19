@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import img1 from '../../images/noAvatar.png'
 import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import {AiOutlineLogin, AiOutlinePhone} from 'react-icons/ai'
+import {BsHouseDoor} from 'react-icons/bs'
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -52,14 +54,18 @@ const Navbar = () => {
       <div className="this">
 
       <img src={logo} alt="" className="carlogo" />
+      <Link to="/" className="link" id="logo">
       <h2>Updriven</h2>
+        </Link>
       </div>
       <nav>
-        <Link to="/" className="link">
-          Home
+      <Link to="/" className="link">
+        <BsHouseDoor size={30} className='icoon'/>
+        <span>Home</span>
         </Link>
         <Link to="/contact" className="link">
-          Contact Us
+        <AiOutlinePhone size={30} className='icoon'/>
+          <span>Contact Us</span>
         </Link>
 
         {user ? (
@@ -91,10 +97,8 @@ const Navbar = () => {
         ) : (
           <>
             <Link to="/login" className="link">
-              Login
-            </Link>
-            <Link to="/profile" className="profile">
-              Profile
+            <AiOutlineLogin size={30} className='icoon'/>
+            <span>Login</span> 
             </Link>
           </>
         )}
