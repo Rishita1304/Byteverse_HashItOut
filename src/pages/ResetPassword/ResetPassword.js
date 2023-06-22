@@ -3,6 +3,7 @@ import './resetpass.css'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Loader from '../../components/loader/Loader';
+import { publicRequest } from '../../Request';
 
 const ResetPassword = () => {
     const [validUrl, setValidUrl] = useState(true);
@@ -12,25 +13,26 @@ const ResetPassword = () => {
 	const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 	const param = useParams();
-	const url = `http://localhost:4000/api/reset-password/${param.id}/${param.token}`;
+
+
     console.log(validUrl);
 	useEffect(() => {
 		const verifyUrl = async () => {
 			try {
-				await axios.get(url);
+				await publicRequest.get(`/reset-password/${param.id}/${param.token}`);
 				setValidUrl(true);
 			} catch (error) {
 				setValidUrl(false);
 			}
 		};
 		verifyUrl();
-	}, [param, url]);
+	}, [param]);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
             setLoading(true);
-			const { data } = await axios.post(url, { password });
+			const { data } = await publicRequest.post(`/reset-password/${param.id}/${param.token}`, { password });
 			setMsg(data.message);
             setLoading(false);
 			setError("");
