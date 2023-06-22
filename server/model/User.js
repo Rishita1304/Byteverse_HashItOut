@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema(
     gender: { type: String, default: "Male"},
     age: { type: Number},
     password: { type:String, required: true },
+    isVerified:{type:Boolean, default:false}
   },
   { timestamps: true }
 );

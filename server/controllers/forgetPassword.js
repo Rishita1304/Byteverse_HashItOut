@@ -30,7 +30,7 @@ exports.postPass =  async (req, res) => {
 			}).save();
 		}
 
-		const url = `${process.env.BASE_URL}/reset-password/${user._id}/${token.token}/`;
+		const url = `${process.env.BASE_URL}/reset-password/redirect`;
 		await sendEmail(user.email, "Password Reset", url);
 
 		res
@@ -55,11 +55,17 @@ exports.verifyPass =  async (req, res) => {
 
 		res.status(200).send("Valid Url");
 	} catch (error) {
-		res.status(500).send({ message: "Internal Server Error" });
+		return res.status(500).send({ message: "Internal Server Error" });
 	}
 };
-
-//  set new password
+exports.redirect=async(req,res)=>{
+	try {
+		cd 
+		return res.redirect("https://updriven.onrender.com/forget-password/reset")
+	} catch (err) {
+		return res.status(500).json({ message: "Internal Server Error" , err:err.message});
+	}
+}
 exports.setPass =  async (req, res) => {
 	try {
 		const passwordSchema = Joi.object({
@@ -86,7 +92,7 @@ exports.setPass =  async (req, res) => {
 		user.password = hashPassword;
 		await user.save();
 
-		res.status(200).send({ message: "Password reset successfully" });
+		return res.status(200).send({ message: "Password reset successfully" });
 	} catch (error) {
 		res.status(500).send(error.message);
 	}

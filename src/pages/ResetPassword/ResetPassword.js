@@ -13,7 +13,6 @@ const ResetPassword = () => {
     const [loading, setLoading] = useState(false);
 	const param = useParams();
 	const url = `http://localhost:4000/api/reset-password/${param.id}/${param.token}`;
-
     console.log(validUrl);
 	useEffect(() => {
 		const verifyUrl = async () => {
