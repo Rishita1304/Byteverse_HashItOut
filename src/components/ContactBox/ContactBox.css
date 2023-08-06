@@ -171,13 +171,15 @@ button {
     flex-direction: column;
   }
   .sections{
-    margin-left: 100px;
+    margin-left: 70px;
     width: 110%;
   }
   .section__ttitle{
-    text-align: start;
+    text-align: center;
   }
   .contact__content{
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
