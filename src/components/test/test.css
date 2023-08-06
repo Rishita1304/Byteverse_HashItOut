@@ -52,6 +52,13 @@
       margin-left: 80px;
     }
     .sectionn{
-      padding: 5rem 0 2rem 4rem;
+      padding: 5rem 3rem ;
+    }
+    .test_title{
+      margin: 20px 0 20px 160px;
+    }
+    .test_subtitle{
+      margin: 20px 0 40px 140px;
+
     }
   }
