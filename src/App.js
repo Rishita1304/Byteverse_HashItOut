@@ -28,7 +28,7 @@ function App() {
          <Route path="/rides" element={user? <Rides/>: <Login/>}/>
          <Route path="/profile" element={user? <Profile/>: <Login/>}/>
          <Route path="/forgot-password" element={user? <Profile/>: <ForgotPass/>}/>
-         <Route path="/reset-password/:id/:token" element={user? <Profile/>: <ResetPassword/>}/>
+         <Route path="/reset-password/:id" element={user? <Profile/>: <ResetPassword/>}/>
         </Routes>
     </div>
     </Router>

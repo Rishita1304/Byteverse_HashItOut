@@ -10,7 +10,7 @@ import { Datas } from './Datas';
 
 const Test = () => {
   return (
-    <div className='testimonial containers section'>
+    <div className='testimonial containers sectionn'>
     <h2 className='test_title'>Our Client says</h2>
     <span className='test_subtitle'>Testimonials</span>   
     <Swiper className='test_container'
@@ -21,6 +21,7 @@ const Test = () => {
     breakpoints={{
       576: {
         slidesPerView: 2,
+        spaceBetween: 28,
       },
       768: {
         slidesPerView: 2,

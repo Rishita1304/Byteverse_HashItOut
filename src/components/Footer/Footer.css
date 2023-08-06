@@ -44,3 +44,14 @@
 .footerContact h3{
      margin-top: 0.4rem;
 }
+
+@media screen and (max-width:500px){
+    .footer{
+        width: 150%;
+    }
+}
+@media screen and (max-width:500px) and (max-height:800px){
+    .footer{
+        width: 160%;
+    }
+}

@@ -1,8 +1,8 @@
 const RideOffer = require("../model/offers");
 
-const Allrides = async (req, res) => {
-  const start = req.body.start;
-  const destination = req.body.destination;
+const Allrides = async ({body}, res) => {
+  const start = body.start;
+  const destination = body.destination;
   const rides = await RideOffer.find({
     start: start,
     destination: destination,

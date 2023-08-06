@@ -163,3 +163,17 @@
     transition: 500ms;
   }
 
+@media screen and (max-width:500px){
+    .link span{
+      display: none;
+    }
+    .icoon{
+      display: block;
+    }
+    .link{
+      margin: 0 2rem;
+    }
+    #logo{
+      margin: 0 3rem 0 0;
+    }
+  }

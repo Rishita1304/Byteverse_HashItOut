@@ -1,4 +1,4 @@
-.section {
+.sectionn {
     padding: 5rem 0 2rem;
   
   }
@@ -44,4 +44,14 @@
     font-size: 0.875rem;
     color: grey;
     padding: 0.5rem 2rem;
+  }
+
+  @media screen and (max-width:500px){
+    .test_container{
+      width: 500px;
+      margin-left: 80px;
+    }
+    .sectionn{
+      padding: 5rem 0 2rem 4rem;
+    }
   }

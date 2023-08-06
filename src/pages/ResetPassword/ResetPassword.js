@@ -19,7 +19,7 @@ const ResetPassword = () => {
 	useEffect(() => {
 		const verifyUrl = async () => {
 			try {
-				await publicRequest.get(`/reset-password/${param.id}/${param.token}`);
+				await publicRequest.get(`/reset-password/${param.id}`);
 				setValidUrl(true);
 			} catch (error) {
 				setValidUrl(false);
@@ -32,7 +32,7 @@ const ResetPassword = () => {
 		e.preventDefault();
 		try {
             setLoading(true);
-			const { data } = await publicRequest.post(`/reset-password/${param.id}/${param.token}`, { password });
+			const { data } = await publicRequest.post(`/reset-password/${param.id}`, { password });
 			setMsg(data.message);
             setLoading(false);
 			setError("");
