@@ -3,8 +3,7 @@ const { postPass, verifyPass, setPass, redirect } = require('../controllers/forg
 const router = require('express').Router();
 
 router.post('/', postPass);
-router.get("/:id/:token", verifyPass);
-router.post("/:id/:token", setPass);
-router.get("/redirect/:id/:token",redirect);
+router.get("/:id", verifyPass);
+router.post("/:id", setPass);
 
 module.exports = router;

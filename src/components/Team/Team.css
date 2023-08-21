@@ -28,3 +28,26 @@
     display: flex;
     justify-content: space-around;
 }
+
+@media screen and (max-width:500px) {
+    .team-opt{
+        flex-direction: column;
+        margin-left: 180px;
+    } 
+    .team{
+        margin: 1rem;
+        width: 120vw;
+    }
+    .ex{
+        margin: 10px 0 10px 80px;
+    }
+    #agents{
+        margin: 20px 0 20px 80px;
+    }
+}
+@media screen and (max-width:500px) and (max-height:800px) {
+    .team-opt{
+        flex-direction: column;
+        margin-left: 200px;
+    } 
+}

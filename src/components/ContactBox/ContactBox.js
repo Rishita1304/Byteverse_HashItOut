@@ -3,9 +3,9 @@ import React from 'react'
 import './ContactBox.css'
 const ContactBox = () => {
   return (
-    <section className='contact section' id='contact'>
-        <h2 className='section__title'>Want to Get in touch?</h2>
-    <div className='contact__container container grid'>
+    <section className='contact sections' id='contact'>
+        <h2 className='section__ttitle'>Want to Get in touch?</h2>
+    <div className='contact__container containers grid'>
         <div className='contact__content'>
             <form className='contact__form'>
                 <div className='contact__form-div'>

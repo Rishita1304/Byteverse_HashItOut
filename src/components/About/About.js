@@ -10,7 +10,7 @@ const About = () => {
       <section className="about__section">
       <div className='containerr'>
         <div className='roww'>
-          <div className='col'>
+          <div className='col'id='thiss'>
             <div className="about__section-content">
               <h4 className="section__subtitle">About Us</h4>
               <h2 className="section__titlee">Welcome to Carpooling</h2>
@@ -53,14 +53,14 @@ const About = () => {
 
     <section className="about__page-section">
         <div className='contain'>
-          <div className='roww'>
+          <div className='roww' id='that'>
             <div className='coll' lg="6" md="6" sm="12">
               <div className="about__page-img">
                 <img src={driveImg} alt="" className="imggg" />
               </div>
             </div>
 
-            <div className='coll' lg="6" md="6" sm="12">
+            <div className='coll' lg="6" md="6" sm="12" id='thatt'>
               <div className="about__page-content">
                 <h2 className="section__titlee">
                   We Provide Safe Rides

@@ -14,7 +14,6 @@ const Ride = () => {
 
   const [formvalues, setformvalues] = useState(initialvalues);
   const [error, seterror] = useState(true);
-  const [formerror, setformerror] = useState({});
 
   const userHandler = (e) => {
     const { name, value } = e.target;
@@ -83,7 +82,7 @@ const Ride = () => {
   return (
     <section className="ride section">
       <h2 className="section__title">Create A Ride!</h2>
-      <div className="ride__container container grid">
+      <div className="ride__container containeer grid">
         <div className="ride__content">
           <form className="ride__form" onSubmit={submitHandler}>
           <div className="ride__form-div">
