@@ -1,0 +1,11 @@
+.profile_container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+.left{
+    
+display: flex;
+    width: 10vw;
+    height: 100vh;
+}

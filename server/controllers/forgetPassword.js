@@ -60,7 +60,6 @@ exports.verifyPass =  async (req, res) => {
 };
 exports.redirect=async(req,res)=>{
 	try {
-		cd 
 		return res.redirect("https://updriven.onrender.com/forget-password/reset")
 	} catch (err) {
 		return res.status(500).json({ message: "Internal Server Error" , err:err.message});
