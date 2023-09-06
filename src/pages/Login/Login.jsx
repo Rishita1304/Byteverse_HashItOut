@@ -159,6 +159,8 @@ const Login = () => {
                                 placeholder="Email"
                                 value={email}
                                 required
+                                autoComplete="off"
+                                spellCheck="false"
                                 onChange={(e) => setEmail(e.target.value.trim())}
                             />
                             {signupRes.status === 500 && (
