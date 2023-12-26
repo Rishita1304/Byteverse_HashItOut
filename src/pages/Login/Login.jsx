@@ -38,8 +38,8 @@ const Login = () => {
             try {
                 const res = await publicRequest.post("auth/register", {
                     name,
-                    number,
                     email,
+                    number,
                     password
                 })
                 setSignupRes(res);
@@ -84,8 +84,8 @@ const Login = () => {
     /* --------------------------------------------------------- */
 
     const [loginPasswordRequired, setLoginPasswordRequired] = useState(false)
-    const [loginEmail, setLoginEmail] = useState("")
-    const [loginPassword, setLoginPassword] = useState("")
+    const [loginEmail, setLoginEmail] = useState("abc123@gmail.com")
+    const [loginPassword, setLoginPassword] = useState("123456789")
     const { dispatch } = useContext(AuthContext)
 
     const handleLogin = async (e) => {
@@ -113,13 +113,13 @@ const Login = () => {
                         )}
                         <div className="input-field">
                             <i className="fas fa-envelope"></i>
-                            <input type="email" placeholder="Email" value={loginEmail} spellCheck="false" required onChange={(e) => setLoginEmail(e.target.value.trim())}/>
+                            <input type="email" placeholder="Email" value="abc123@gmail.com" spellCheck="false" required onChange={(e) => setLoginEmail(e.target.value.trim())}/>
                         </div>
                         <div className="input-field password">
                             <i className="fas fa-eye" onClick={() => setHideShowPassword(!hideshowPassword)}></i>
-                            <input type={!hideshowPassword ? "password" : "text"} placeholder="Password" value={loginPassword} required onChange={(e) => setLoginPassword(e.target.value.trim())}/>
+                            <input type={!hideshowPassword ? "password" : "text"} placeholder="Password" value="123456789" required onChange={(e) => setLoginPassword(e.target.value.trim())}/>
                             <div className="errormsg">
-                                {loginPasswordRequired ? "Fill out Password" : undefined}
+                                {/* {loginPasswordRequired ? "Fill out Password" : undefined} */}
                             </div>
                         </div>
                         <div className='forgetpass'>
@@ -155,7 +155,7 @@ const Login = () => {
                         <div className="input-field" style={{ border: signupRes.data?.email ? '1px solid #FF1818' : 'none' }}>
                             <i className="fas fa-envelope"></i>
                             <input
-                                type="email"
+                                type="text"
                                 placeholder="Email"
                                 value={email}
                                 required

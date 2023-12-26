@@ -4,10 +4,10 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const port = 4000 || process.env.PORT;
+const mongoose = require("mongoose");
 const router = require("./routes/Route");
 const blogRouter = require("./routes/blogRoute");
 const forgetPass = require("./routes/forgetPass")
-const mongoose = require("mongoose");
 
 mongoose
   .connect(process.env.DATABASE_KEY, {

@@ -77,6 +77,8 @@ const Ride = () => {
     }
     publicRequest.post("auth/offerRide",datacheck).then((e)=>{
       console.log(e.data);
+      window.location.assign('/');
+      alert("Ride Created");
     }).catch((err)=>{console.log(err.message);})
   };
   return (

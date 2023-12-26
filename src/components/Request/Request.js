@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 
 const Request = () => {
   const initialvalues = {
-    pickup: "",
-    destination: "",
+    pickup: "delhi",
+    destination: "mumbai",
     date: "",
-    time: "",
+    time: "5",
     vacancy: "",
   };
 
@@ -76,6 +76,7 @@ const Request = () => {
   }
   localStorage.setItem("pickup",formvalues.pickup)
   localStorage.setItem("destination",formvalues.destination)
+  localStorage.setItem("date",formvalues.date)
   localStorage.setItem("time",formvalues.time)
   localStorage.setItem("vacancy",formvalues.vacancy)
 
@@ -100,13 +101,13 @@ const Request = () => {
        <div className="signinputs">
          <div className="pickup registerfield">
          <GrLocationPin/>
-         <input type="text" placeholder="Select Pickup" name="pickup" value={formvalues.pickup} onChange={userHandler} />
+         <input type="text" placeholder="Select Pickup" name="pickup" value="Delhi" onChange={userHandler} />
          <p className='throwerror'>{formerror.pickup}</p>
        </div>
 
      <div className="destination registerfield">
         <MdLocationOn/>
-        <input type="text" name="destination" placeholder="Select Destination" value={formvalues.destination} onChange={userHandler} />
+        <input type="text" name="destination" placeholder="Select Destination" value="Mumbai" onChange={userHandler} />
         <p className='throwerror'>{formerror.destination}</p>
      </div>
 
