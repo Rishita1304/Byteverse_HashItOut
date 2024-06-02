@@ -1,6 +1,6 @@
 import React from 'react'
 import "./card.css"
-import { CCard,CCardImage,CCardBody,CButton,CCardText,CCardTitle } from '@coreui/react'
+import { CCard,CCardImage,CCardBody,CCardText,CCardTitle } from '@coreui/react'
 import logo from "../../images/drive.jpg";
 import Popup from '../Popup/Popup';
 const Card = ({data}) => {

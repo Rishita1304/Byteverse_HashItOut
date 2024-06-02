@@ -3,9 +3,6 @@ import "./Member.css";
 import { BiUser } from "react-icons/bi";
 import { SlCalender } from "react-icons/sl";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import facebook from "../../images/facebook.png";
-import insta from "../../images/instagram.png";
-import twitter from "../../images/twitter.png";
 
 const Member = (props) => {
   return (

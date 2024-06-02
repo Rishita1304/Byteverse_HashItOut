@@ -83,7 +83,7 @@ const Login = () => {
     }
     /* --------------------------------------------------------- */
 
-    const [loginPasswordRequired, setLoginPasswordRequired] = useState(false)
+    const [ setLoginPasswordRequired] = useState(false)
     const [loginEmail, setLoginEmail] = useState("abc123@gmail.com")
     const [loginPassword, setLoginPassword] = useState("123456789")
     const { dispatch } = useContext(AuthContext)

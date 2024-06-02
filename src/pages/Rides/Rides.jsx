@@ -34,7 +34,7 @@ const Rides = () => {
       }
     }
     fetchData();
-  }, []);
+  }, );
 
   return (
     <>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import img1 from "../../images/Carpool-rafiki.png";
 import "./Ride.css";
-import axios from "axios";
 import { publicRequest } from "../../Request";
 const Ride = () => {
   const initialvalues = {
@@ -13,7 +12,6 @@ const Ride = () => {
   };
 
   const [formvalues, setformvalues] = useState(initialvalues);
-  const [error, seterror] = useState(true);
 
   const userHandler = (e) => {
     const { name, value } = e.target;
@@ -23,43 +21,6 @@ const Ride = () => {
   const submitHandler = (e) => {
     console.log(e);
     e.preventDefault();
-    const errors_form = () => {
-      const errors = {};
-
-      if (formvalues.pickup !== "") {
-        errors.pickup = "";
-        seterror(true);
-        console.log(error.pickup);
-      } else {
-        seterror(false);
-        errors.pickup = "Please enter pickup";
-      }
-
-      if (formvalues.destination !== "") {
-        errors.destination = "";
-        seterror(true);
-        console.log(error.destination);
-      } else {
-        seterror(false);
-        errors.destination = "Please enter destination";
-      }
-
-      if (formvalues.date === "") {
-        seterror(false);
-        errors.year = "Please select Date";
-      } else {
-        errors.year = "";
-      }
-
-      if (formvalues.vacancy === "") {
-        seterror(false);
-        errors.branch = "Please select Vacancy";
-      } else {
-        errors.branch = "";
-      }
-
-      return errors;
-    };
     const email=JSON.parse(localStorage.getItem("user"))?.email;
     const name=JSON.parse(localStorage.getItem("user"))?.name;
     console.log(name);

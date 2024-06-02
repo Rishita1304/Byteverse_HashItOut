@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import "./Register.css";
 import { Link, useNavigate} from 'react-router-dom';
-import axios from "axios";
 import img1 from '../../images/registerpic.png'
 import { publicRequest } from '../../Request';
 

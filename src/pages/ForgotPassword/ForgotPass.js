@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './forgotpass.css'
-import axios from 'axios';
 import Loader from '../../components/loader/Loader';
 import { publicRequest } from '../../Request';
 

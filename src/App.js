@@ -1,5 +1,4 @@
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
 import {Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Register from './pages/Register/Register';
