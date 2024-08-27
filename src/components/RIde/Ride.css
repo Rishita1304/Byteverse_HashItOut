@@ -114,6 +114,7 @@ button {
   background-color: #6f9cb5;
   color: var(--container-color);
   width: 15rem;
+  cursor: pointer;
   padding: 0.5rem 1rem;
   border-radius: 0.8rem;
   font-weight: var(--font-medium);

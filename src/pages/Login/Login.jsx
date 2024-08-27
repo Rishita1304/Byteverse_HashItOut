@@ -1,6 +1,8 @@
 import { useContext, useRef, useState } from 'react'
 import './logins.css'
 import Loader from '../../components/loader/Loader'
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
 import { Link } from 'react-router-dom'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import { publicRequest } from '../../Request'
@@ -83,7 +85,7 @@ const Login = () => {
     }
     /* --------------------------------------------------------- */
 
-    const [ setLoginPasswordRequired] = useState(false)
+    const [loginPasswordRequired, setLoginPasswordRequired] = useState(false)
     const [loginEmail, setLoginEmail] = useState("abc123@gmail.com")
     const [loginPassword, setLoginPassword] = useState("123456789")
     const { dispatch } = useContext(AuthContext)
@@ -112,15 +114,16 @@ const Login = () => {
                             <div className="error_message">{loginRes.data}</div>
                         )}
                         <div className="input-field">
-                            <i className="fas fa-envelope"></i>
+                            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <IoMdMail />
+                        </div>
                             <input type="email" placeholder="Email" value="abc123@gmail.com" spellCheck="false" required onChange={(e) => setLoginEmail(e.target.value.trim())}/>
                         </div>
                         <div className="input-field password">
-                            <i className="fas fa-eye" onClick={() => setHideShowPassword(!hideshowPassword)}></i>
-                            <input type={!hideshowPassword ? "password" : "text"} placeholder="Password" value="123456789" required onChange={(e) => setLoginPassword(e.target.value.trim())}/>
-                            <div className="errormsg">
-                                {/* {loginPasswordRequired ? "Fill out Password" : undefined} */}
-                            </div>
+                        <button style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}type="button" onClick={() => setHideShowPassword((prev)=>!prev)}>
+                           {!hideshowPassword ?  <FaEye /> : <FaEyeSlash />}
+                            </button>
+                            <input type={!hideshowPassword ? "password" : "text"} placeholder="Password" value="123456789" required/>
                         </div>
                         <div className='forgetpass'>
                         <Link to="/forgot-password">

@@ -69,6 +69,7 @@ form.sign-in-form {
   height: 55px;
   border-radius: 55px;
   display: grid;
+  align-items: center;
   grid-template-columns: 15% 85%;
   padding: 0 0.4rem;
   position: relative;
@@ -87,6 +88,7 @@ form.sign-in-form {
 
 .input-field i {
   text-align: center;
+  align-items: center;
   line-height: 55px;
   color: #acacac;
   transition: 0.5s;
