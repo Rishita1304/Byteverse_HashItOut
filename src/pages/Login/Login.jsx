@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import { publicRequest } from '../../Request'
 import { AuthContext } from '../../context/AuthContext'
+import { IoPersonSharp } from "react-icons/io5";
+import { FaPhone } from "react-icons/fa";
 import { LoginFailure, LoginStart, LoginSuccess } from '../../context/AuthActions'
 
 const Login = () => {
@@ -140,8 +142,9 @@ const Login = () => {
                             <div className="usercreated">{signupRes.data.status}</div>
                         )}
                         <div className="input-field" style={{ border: signupRes.data?.name ? '1px solid #FF1818' : 'none' }}>
-                            <i className="fas fa-user"></i>
-                            <input
+                        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <IoPersonSharp />
+                        </div>                           <input
                                 type="text"
                                 placeholder="Name"
                                 value={name}
@@ -156,8 +159,10 @@ const Login = () => {
                             )}
                         </div>
                         <div className="input-field" style={{ border: signupRes.data?.email ? '1px solid #FF1818' : 'none' }}>
-                            <i className="fas fa-envelope"></i>
-                            <input
+                        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <IoMdMail />
+                        </div>                           
+                        <input
                                 type="text"
                                 placeholder="Email"
                                 value={email}
@@ -173,7 +178,9 @@ const Login = () => {
                             )}
                         </div>
                         <div className="input-field" style={{ border: signupRes.data?.number ? '1px solid #FF1818' : 'none' }}>
-                            <i className="fas fa-phone"></i>
+                        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <FaPhone />
+                        </div>
                             <input 
                                 type="text" 
                                 placeholder="Mobile Number" 
@@ -189,9 +196,9 @@ const Login = () => {
                             )}
                         </div>
                         <div className="input-field password" style={{ border: validatePassword === false ? '1px solid #FF1818' : 'none' }}>
-                            <i className="fas fa-eye"
-                                onClick={() => setHideShowPassword(!hideshowPassword)}
-                            ></i>
+                        <button style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}type="button" onClick={() => setHideShowPassword((prev)=>!prev)}>
+                           {!hideshowPassword ?  <FaEye /> : <FaEyeSlash />}
+                            </button>
                             <input
                                 type={!hideshowPassword ? "password" : "text"}
                                 placeholder="Password"
@@ -199,9 +206,9 @@ const Login = () => {
                                 required
                                 onChange={(e) => setPassword(e.target.value.trim())}
                             />
-                            <div className="errormsg">
+                            {/* <div className="errormsg">
                                 {validatePassword === false ? "Must be at least 6 characters long" : undefined}
-                            </div>
+                            </div> */}
                         </div>
                         <button
                             className="loginpage-btn"

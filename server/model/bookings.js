@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const RequestSchema = new mongoose.Schema(
   {
+   email:{type:String, required:true},
    pickup:{type:String,required:true},
    destination:{type:String,required:true},
    date:{type:String,required:true},
