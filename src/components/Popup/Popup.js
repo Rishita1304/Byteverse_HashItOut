@@ -30,7 +30,7 @@ const Popup = ({ data }) => {
 
   return (
     <div>
-      <CButton onClick={togglePopup} className='card_button'>SHAREdfssedfa RIDE</CButton>
+      <CButton onClick={togglePopup} className='card_button'>SHARE RIDE</CButton>
       {isOpen && (
         <div className="popup">
           <div className="popup-inner">
