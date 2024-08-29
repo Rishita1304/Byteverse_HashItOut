@@ -1,39 +1,59 @@
+/* popup.css */
+
 .popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  }
-  
-  .popup-inner {
-    background-color: #bad0dc;;
-    padding: 0 20px 20px 20px;
-    width: 40vw;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  .close-btn {
-    position:relative;
-    top: 0;
-    right: -220px;
-    font-size: 24px;
-    font-weight: bold;
-    background-color: #bad0dc;
-    border: none;
-    cursor: pointer;
-  }
-
-  .card_button{
-    margin-top: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid black;
-    background-color: #bad0dc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure the popup is above other content */
 }
 
+.popup-inner {
+  background-color: #f0f4f8; /* A softer background color */
+  padding: 20px;
+  width: 40vw;
+  max-width: 500px; /* Set a maximum width */
+  border-radius: 10px; /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Softer shadow */
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.content {
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.card_button {
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #333;
+  background-color: #bad0dc;
+  color: #333;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card_button:hover {
+  background-color: #9bc1d8; /* Slightly darker shade for hover */
+  color: #fff;
+}

@@ -1,12 +1,11 @@
-import React from 'react'
-import "./Profile.css"
+import UserProfile from "../../components/userProfile/UserProfile";
+
 const Profile = () => {
   return (
-    <div className=" profile_container">
-      <div className="left">left</div>
-      <div className="right">right</div>
+    <div>
+      <UserProfile email="abc123@gmail.com" />
     </div>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

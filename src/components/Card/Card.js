@@ -1,6 +1,6 @@
 import React from 'react'
 import "./card.css"
-import { CCard,CCardImage,CCardBody,CCardText,CCardTitle } from '@coreui/react'
+import { CCard,CCardImage,CCardBody,CCardText,CCardTitle, CButton } from '@coreui/react'
 import logo from "../../images/drive.jpg";
 import Popup from '../Popup/Popup';
 const Card = ({data}) => {
@@ -18,7 +18,7 @@ const Card = ({data}) => {
      <div className="card_content">Price: <strong>₹{data.price}</strong> </div>
      <Popup data={data} className='card_button'/>
     </CCardText>
-    {/* <CButton className='card_button'>SHARE RIDE</CButton> */}
+    <CButton className='card_button'>SHARE RIDE</CButton>
   </CCardBody>
 </CCard>
   )

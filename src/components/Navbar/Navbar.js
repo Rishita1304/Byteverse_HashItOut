@@ -83,7 +83,10 @@ const Navbar = () => {
 
         <div className={`dropdown-menu ${open? 'active' : 'inactive'}`} >
           <ul>
-        
+          <Link to="/profile" className="links">
+              Profile
+            </Link>
+            <hr/>
             <Link to="/login" className="links" onClick={removeUser}>
               Logout
             </Link>
