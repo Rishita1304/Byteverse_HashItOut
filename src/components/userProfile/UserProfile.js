@@ -35,7 +35,7 @@ const UserProfile = ({ email }) => {
   }
 
   if (!userData) {
-    return <div>User not found</div>;
+    return <div>User nott found</div>;
   }
 
   const { user, offers, request: bookedRides } = userData;

@@ -19,6 +19,7 @@ const Card = ({data}) => {
      <Popup data={data} className='card_button'/>
     </CCardText>
     {/* <CButton className='card_button'>SHARE RIDE</CButton> */}
+    
   </CCardBody>
 </CCard>
   )
